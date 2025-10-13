@@ -1,0 +1,32 @@
+:root {
+    --main: #2F6690;
+    --accent: #3A7CA5;
+    --background: #D9DCD6;
+    --bold: #16425B;
+    --secondary: #81c3d7;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+ul li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul li {
+    float: left;
+}
+
+.navbar li {
+}

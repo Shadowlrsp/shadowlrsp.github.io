@@ -1,0 +1,69 @@
+:root {
+    --main: #2F6690;
+    --accent: #3A7CA5;
+    --background: #D9DCD6;
+    --bold: #16425B;
+    --secondary: #81c3d7;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url("assets/fonts/inter.ttf");
+}
+
+body {
+    background-color: var(--background);
+}
+* {
+    font-family: 'inter', sans-serif;
+}
+
+.logo {
+    display: flex;
+}
+.logo p {
+    top: 240px;
+}
+
+.presentation {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.presentation h1 {
+    align-items: center;
+    justify-self: center;
+}
+
+.door-handles {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.door-handles img {
+    width: 300px;
+    height: 300px;
+    
+}
+
+.handle-card {
+    outline: #16425B;
+    outline-style: solid;
+    outline-width: 2px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 24px;
+}
+
+.products h1 {
+    font-weight: 100;
+}
