@@ -1,104 +1,119 @@
 /* =============================
-   PorteShop
-   Palette : #2F6690, #3A7CA5, #D9DCD6, #16425B, #81C3D7
-   ============================= */
-
-/* =============================
-   Style global
+   Base du site
    ============================= */
 body {
     margin: 0;
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     background-color: #D9DCD6;
     color: #16425B;
     line-height: 1.6;
 }
 
+h1, h2, h3 {
+    color: #16425B;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
 /* =============================
-   En-tête principale
+   Header (désactivé car navbar déjà utilisée)
    ============================= */
 .header {
-    background-image: url("../assets/doors-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.overlay {
-    background-color: rgba(47, 102, 144, 0.7);
-    text-align: center;
-    color: #D9DCD6;
-    padding: 40px;
-    border-radius: 15px;
-}
-
-.header h1 {
-    font-size: 3rem;
-    margin: 0;
-    letter-spacing: 2px;
-}
-
-.header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    opacity: 0.9;
+    display: none;
 }
 
 /* =============================
    Contenu principal
    ============================= */
 .content {
-    padding: 40px 10%;
+    padding: 50px 10%;
 }
 
-.intro, .valeurs, .histoire {
-    margin-bottom: 60px;
+/* =============================
+   Section : À propos
+   ============================= */
+.apropos-intro {
+    text-align: center;
+    margin-bottom: 80px;
 }
 
-h2 {
+.apropos-intro h1 {
+    color: #2F6690;
+    font-size: 2rem;
+    border-bottom: 3px solid #81C3D7;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+
+.apropos-intro p {
+    max-width: 800px;
+    margin: 0 auto 15px;
+    text-align: justify;
+}
+
+/* =============================
+   Section : Présentation (Qui sommes-nous ?)
+   ============================= */
+.intro h2 {
     color: #2F6690;
     border-bottom: 3px solid #81C3D7;
     display: inline-block;
     padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
-p {
-    max-width: 800px;
-    margin-top: 15px;
+.intro p {
+    margin-bottom: 1.2em;
+    text-align: justify;
 }
 
 /* =============================
    Section : Valeurs
    ============================= */
+.valeurs {
+    background-color: #3A7CA5;
+    color: #D9DCD6;
+    padding: 60px 10%;
+    border-radius: 20px;
+    margin: 80px auto;
+    box-shadow: 0 6px 18px rgba(22, 66, 91, 0.3);
+    text-align: center;
+}
+
+.valeurs h2 {
+    color: #D9DCD6;
+    border-bottom: 3px solid #81C3D7;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+}
+
 .valeurs-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 40px;
+    justify-content: center;
+    gap: 30px;
 }
 
 .valeur {
-    background-color: #3A7CA5;
+    background-color: #16425B;
     color: #D9DCD6;
-    width: 250px;
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
     border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(22, 66, 91, 0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .valeur:hover {
     transform: translateY(-5px);
-    background-color: #2F6690;
+    box-shadow: 0 8px 20px rgba(22, 66, 91, 0.5);
 }
 
-.icon {
+.valeur .icon {
     font-size: 40px;
     color: #81C3D7;
     margin-bottom: 10px;
@@ -107,11 +122,30 @@ p {
 /* =============================
    Section : Histoire
    ============================= */
+.histoire {
+    margin: 80px auto;
+    padding: 0 10%;
+}
+
+.histoire h2 {
+    color: #2F6690;
+    border-bottom: 3px solid #81C3D7;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.histoire p {
+    text-align: justify;
+    margin-bottom: 1.2em;
+}
+
 .histoire img {
-    width: 100%;
+    display: block;
+    max-width: 100%;
     border-radius: 15px;
-    margin-top: 20px;
-    box-shadow: 0 6px 12px rgba(22, 66, 91, 0.2);
+    margin: 40px auto;
+    box-shadow: 0 6px 20px rgba(22, 66, 91, 0.3);
 }
 
 /* =============================
@@ -201,20 +235,88 @@ p {
     background-color: #16425B;
     color: #D9DCD6;
     text-align: center;
-    padding: 15px 0;
+    padding: 25px;
+    margin-top: 100px;
     font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
+
 
 /* =============================
    Responsive
-   ============================= */
-@media (max-width: 768px) {
+   =============================
+*/
+
+/* --- 992px --- */
+@media screen and (max-width: 992px) {
+
+    .content {
+        padding: 40px 6%;
+    }
+
     .valeurs-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .header h1 {
-        font-size: 2.2rem;
+    .valeur {
+        width: 80%;
+    }
+
+    .apropos-intro h1 {
+        font-size: 1.8rem;
+    }
+
+    .histoire img {
+        width: 90%;
+    }
+
+    .contact-form {
+        padding: 40px 8%;
+    }
+
+    .form-group {
+        max-width: 90%;
     }
 }
+
+/* ---  600px --- */
+@media screen and (max-width: 600px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    .apropos-intro h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro h2,
+    .valeurs h2,
+    .histoire h2,
+    .contact-form h2 {
+        font-size: 1.3rem;
+    }
+
+    .valeur {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .send-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        padding: 20px;
+    }
+}
+
