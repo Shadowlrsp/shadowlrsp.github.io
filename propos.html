@@ -10,30 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-            <ul class="navbar-links">
-                <li> <a href="index.html">Accueil</a> </li>
-                <li> <a href="boutique.html">Boutique</a> </li>
-                <li> <a href="propos.html">A propos</a> </li>
-                <li><a href="panier.html" class="material-symbols-outlined">shopping_cart</a></li>
-            </ul>
-        </div>
-    </header>
-    <div class="debut">  
+
+    <!-- =============================
+         En-tête principale
+         ============================= -->
+    <header class="header">
         <div class="overlay">
             <h1><span class="material-symbols-outlined">store</span> PorteShop</h1>
             <p>La boutique en ligne qui ouvre toutes les portes du design.</p>
         </div>
-    </div>
+    </header>
+
+    <!-- =============================
+         Contenu principal
+         ============================= -->
     <main class="content">
+
+        <!-- =============================
+             Section : Présentation
+             ============================= -->
         <section class="intro">
             <h2><span class="material-symbols-outlined">info</span> Qui sommes-nous ?</h2>
             <p>
-                PorteShop est un site e-commerce innovant dédié aux portes, poignées et accessoires de design. 
-                Notre mission : offrir à chaque client la porte parfaite, qu’il s’agisse de modernité, de sécurité ou d’élégance.
+                Chez <strong>PorteShop</strong>, nous croyons que la porte n’est pas qu’un simple passage : 
+                c’est le premier contact avec votre intérieur, un symbole d’accueil, d’intimité et de style.  
+                C’est pourquoi nous proposons une sélection unique de portes et d’accessoires alliant design, durabilité et innovation.
+            </p>
+            <p>
+                Notre équipe est composée de jeunes designers, d’artisans passionnés et de développeurs web réunis autour d’une même idée :
+                simplifier l’achat de portes de qualité en ligne. Nous travaillons avec des fabricants français et européens pour garantir
+                des produits à la fois esthétiques, solides et respectueux de l’environnement.
+            </p>
+            <p>
+                Aujourd’hui, PorteShop s’adresse à tous : particuliers, architectes ou entreprises, en offrant une plateforme moderne,
+                intuitive et centrée sur l’expérience utilisateur. Nous faisons de chaque commande une collaboration unique et sur mesure.
             </p>
         </section>
 
+        <!-- =============================
+             Section : Valeurs
+             ============================= -->
         <section class="valeurs">
             <h2><span class="material-symbols-outlined">favorite</span> Nos valeurs</h2>
             <div class="valeurs-container">
@@ -55,19 +71,68 @@
             </div>
         </section>
 
+        <!-- =============================
+             Section : Histoire
+             ============================= -->
         <section class="histoire">
             <h2><span class="material-symbols-outlined">history</span> Notre histoire</h2>
             <p>
-                Créé en 2024 par des passionnés d’architecture et de technologie, PorteShop est né d’un constat simple :
-                trouver une porte de qualité, esthétique et adaptée à son intérieur est souvent compliqué.
-                Depuis, nous avons ouvert les portes d’un nouveau monde d’aménagement intérieur, où design et praticité se rencontrent.
+                L’aventure <strong>PorteShop</strong> débute en 2025, dans un petit atelier belfortain où quatres étudiants en BUT informatique et
+                imaginent une nouvelle manière d’acheter ses portes. Frustrés par le manque de transparence et de personnalisation dans les magasins traditionnels,
+                ils décident de créer une boutique en ligne à la fois élégante, simple et accessible à tous.
             </p>
-            <img src="assets/propos/workshop.jpg" alt="Atelier de conception de portes">
+            <p>
+                Après plusieurs mois de recherche et de développement, la première version du site voit le jour. Grâce à son interface claire, à son moteur de recherche
+                intuitif et à la qualité de ses modèles, PorteShop séduit rapidement de nombreux particuliers et professionnels du bâtiment.
+            </p>
+            <p>
+                Aujourd’hui, nous continuons d’innover chaque jour pour proposer de nouveaux designs, de meilleures finitions et une expérience d’achat toujours plus fluide.
+                PorteShop grandit, mais garde une promesse : offrir des produits fabriqués avec passion, et un service humain au cœur du digital.
+            </p>
+            <img src="assets/workshop.jpg" alt="Atelier de conception de portes">
+        </section>
+
+        <!-- =============================
+             Section : Formulaire de contact
+             ============================= -->
+        <section class="contact-form">
+            <h2><span class="material-symbols-outlined">mail</span> Contactez-nous</h2>
+            <p>Une question, une demande ou un projet ? L’équipe PorteShop vous répond sous 24h.</p>
+            
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="mail-fullname"><span class="material-symbols-outlined">person</span> Nom complet</label>
+                    <input type="text" id="mail-fullname" name="mail-text" placeholder="Nom et prénom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail-email"><span class="material-symbols-outlined">alternate_email</span> Adresse e-mail</label>
+                    <input type="email" id="mail-email" name="mail-email" placeholder="votre-email@domaine.ex" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail-topic"><span class="material-symbols-outlined">subject</span> Objet</label>
+                    <input type="text" id="mail-topic" name="mail-topic" placeholder="Sujet du message" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail-message"><span class="material-symbols-outlined">chat</span> Message</label>
+                    <textarea id="mail-message" name="mail-message" placeholder="Votre message..." rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="send-btn">
+                    <span class="material-symbols-outlined">send</span> Envoyer
+                </button>
+            </form>
         </section>
     </main>
 
+    <!-- =============================
+         Pied de page
+         ============================= -->
     <footer class="footer">
         <p>© 2025 PorteShop — Tous droits réservés.</p>
     </footer>
+
 </body>
 </html>
