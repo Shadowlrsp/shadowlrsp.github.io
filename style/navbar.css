@@ -6,6 +6,10 @@
     --secondary: #81c3d7;
 }
 
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
 
 .navbar {
     display: flex;
