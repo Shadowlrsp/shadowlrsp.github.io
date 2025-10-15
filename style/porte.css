@@ -1,3 +1,11 @@
+/* =============================
+   PorteShop
+   Palette : #2F6690, #3A7CA5, #D9DCD6, #16425B, #81C3D7
+   ============================= */
+
+/* =============================
+   Style global
+   ============================= */
 body {
     margin: 0;
     font-family: "Poppins", Arial, sans-serif;
@@ -6,8 +14,11 @@ body {
     line-height: 1.6;
 }
 
-.debut {
-    background-image: url("assets/propos/doors-bg.jpg");
+/* =============================
+   En-tête principale
+   ============================= */
+.header {
+    background-image: url("../assets/doors-bg.jpg");
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -25,18 +36,21 @@ body {
     border-radius: 15px;
 }
 
-.debut h1 {
+.header h1 {
     font-size: 3rem;
     margin: 0;
     letter-spacing: 2px;
 }
 
-.debut p {
+.header p {
     font-size: 1.2rem;
     margin-top: 10px;
     opacity: 0.9;
 }
 
+/* =============================
+   Contenu principal
+   ============================= */
 .content {
     padding: 40px 10%;
 }
@@ -57,6 +71,9 @@ p {
     margin-top: 15px;
 }
 
+/* =============================
+   Section : Valeurs
+   ============================= */
 .valeurs-container {
     display: flex;
     justify-content: space-around;
@@ -87,6 +104,9 @@ p {
     margin-bottom: 10px;
 }
 
+/* =============================
+   Section : Histoire
+   ============================= */
 .histoire img {
     width: 100%;
     border-radius: 15px;
@@ -94,6 +114,89 @@ p {
     box-shadow: 0 6px 12px rgba(22, 66, 91, 0.2);
 }
 
+/* =============================
+   Section : Formulaire de contact
+   ============================= */
+.contact-form {
+    background-color: #3A7CA5;
+    color: #D9DCD6;
+    padding: 60px 10%;
+    border-radius: 20px;
+    margin: 80px auto;
+    box-shadow: 0 8px 20px rgba(22, 66, 91, 0.3);
+    text-align: center;
+}
+
+.contact-form h2 {
+    color: #D9DCD6;
+    border-bottom: 3px solid #81C3D7;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.contact-form p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #D9DCD6;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #D9DCD6;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #81C3D7;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #16425B;
+    background-color: #D9DCD6;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2F6690;
+    box-shadow: 0 0 8px rgba(129, 195, 215, 0.8);
+}
+
+.send-btn {
+    background-color: #16425B;
+    color: #D9DCD6;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.send-btn:hover {
+    background-color: #2F6690;
+    transform: translateY(-2px);
+}
+
+/* =============================
+   Pied de page
+   ============================= */
 .footer {
     background-color: #16425B;
     color: #D9DCD6;
@@ -102,6 +205,9 @@ p {
     font-size: 0.9rem;
 }
 
+/* =============================
+   Responsive
+   ============================= */
 @media (max-width: 768px) {
     .valeurs-container {
         flex-direction: column;
