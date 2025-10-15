@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #D9DCD6;
+    color: #16425B;
+    line-height: 1.6;
+}
+
+.debut {
+    background-image: url("assets/doors-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(47, 102, 144, 0.7);
+    text-align: center;
+    color: #D9DCD6;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.debut h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.debut p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.content {
+    padding: 40px 10%;
+}
+
+.intro, .valeurs, .histoire {
+    margin-bottom: 60px;
+}
+
+h2 {
+    color: #2F6690;
+    border-bottom: 3px solid #81C3D7;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    max-width: 800px;
+    margin-top: 15px;
+}
+
+.valeurs-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.valeur {
+    background-color: #3A7CA5;
+    color: #D9DCD6;
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(22, 66, 91, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.valeur:hover {
+    transform: translateY(-5px);
+    background-color: #2F6690;
+}
+
+.icon {
+    font-size: 40px;
+    color: #81C3D7;
+    margin-bottom: 10px;
+}
+
+.histoire img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 6px 12px rgba(22, 66, 91, 0.2);
+}
+
+.footer {
+    background-color: #16425B;
+    color: #D9DCD6;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .valeurs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+    }
+}
