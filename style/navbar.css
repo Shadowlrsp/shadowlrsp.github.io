@@ -6,17 +6,42 @@
     --secondary: #81c3d7;
 }
 
+
 .navbar {
     display: flex;
     justify-content: center;
+    background: linear-gradient(to right, var(--bold), var(--accent));
 }
+
+@font-face {
+    font-family: 'inter';
+    src: url("assets/fonts/inter.ttf");
+}
+
+.navbar {
+    font-family: 'inter', sans-serif;
+}
+
 
 ul li a {
   display: block;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  color: var(--background);
+
+  transition: background-color 0.3s ease;
 }
+
+ul li .material-symbols-outlined {
+  padding-bottom: 10px;
+  padding-top: 12px;
+}
+
+ul li a:hover {
+  background-color: var(--bold);
+}
+
  ul {
   list-style-type: none;
   margin: 0;
