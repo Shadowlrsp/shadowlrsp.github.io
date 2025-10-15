@@ -18,13 +18,6 @@ p {
 }
 
 /* =============================
-   Header (désactivé car navbar déjà utilisée)
-   ============================= */
-.header {
-    display: none;
-}
-
-/* =============================
    Contenu principal
    ============================= */
 .content {
