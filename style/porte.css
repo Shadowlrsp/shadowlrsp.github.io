@@ -6,8 +6,6 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     background-color: #D9DCD6;
     color: #16425B;
-    line-height: 1.6;
-    /* enleve le line-height stp plz plz pl z */
 }
 
 h1, h2, h3 {
