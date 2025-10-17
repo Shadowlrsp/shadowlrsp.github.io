@@ -47,16 +47,24 @@ body::before {
 
 /*Start search-bar*/  
 .Search-bar ul{
+  list-style-type: none;
   text-align: left;
   justify-content: center;
+  text-decoration: none;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
 }
 
 .Search-bar ul li a{
   margin: 0 15px;
   text-decoration: none;
   color: black;
+  font-weight: bold;
   
 }
+
 
 .Search-bar{
     height: 65px;
