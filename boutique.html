@@ -8,9 +8,11 @@
 
     <link rel="stylesheet" href="style/boutique.css">
     <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/modal.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Material+Icons+Outlined&family=Material+Icons+Round&family=Material+Icons+Sharp&family=Material+Icons+Two+Tone" rel="stylesheet" />
 </head>
 
 <body>
@@ -37,127 +39,61 @@
         </div>
 
         <div class="products">
-            <h1> Nos Poignées de porte </h1>
-            <p> Laissez-vous vous prendre par la main grâce à notre selection variée de poignées de portes</p>
-            <div class="product-container">
-                <div class="door-handles">
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee1.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
+            <h1> Des poignées à portée de main</h1>
+            <div class="door-handles">
+                <!-- Ajout dynamique des produits par javascript -->
+                <!-- Classe pour une card : doorhandle-card -->
+                 <div class="product-card">
+                    <div class="top-card">
+                        <img src="assets/boutique/poignees/poignee1.jpg" alt="Poignée de porte classique">
+                        <p class="description" style="display: none;">La poignee de vos reves</p>
+                        <button class="learn-more" id="learn-more">
+                            <span class="material-icons-outlined">
+                                info
+                            </span>
+                        </button>
                     </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee2.jpg" alt="Poignée de porte 2">
-                        <h2>Poignée circulaire</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
+                    <div class="bottom-card">
+                        <h2>Poignée Classique</h2>
+                        <!-- <p>Une poignée élégante et intemporelle pour toutes les portes.</p> -->
+                        <p class="price">29,99 €</p>
+                        <button class="add-to-cart">Ajouter au panier</button>
                     </div>
+                 </div>
+            </div>
 
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee3.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
+            <h1> Des encadrements pour tous les goûts </h1>
+            <div class="door-frames">
+                <!-- Ajout dynamique des produits par javascript -->
+                <!-- Classe pour une card : doorframe-card -->
+            </div>
 
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee4.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee5.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee6.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee7.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee8.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-                </div>
-                <div class="door-handles">
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee1.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee2.jpg" alt="Poignée de porte 2">
-                        <h2>Poignée circulaire</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee3.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee4.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee5.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee6.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee7.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-
-                    <div class="handle-card">
-                        <img src="assets/boutique/poignees/poignee8.jpg" alt="Poignée de porte 1">
-                        <h2>Poignée en barre</h2>
-                        <p>Prix: 149.99€</p>
-                        <button>Ajouter au panier</button>
-                    </div>
-                </div>
+            <h1> Des serrures pour votre sécurité </h1>
+            <div class="door-locks">
+                <!-- Ajout dynamique des produits par javascript -->
+                <!-- Classe pour une card : doorlock-card -->
             </div>
         </div>
+    </div>
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Some text in the Modal Body</p>
+                <p class="modal-other">Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3 class="modal-footer-text">Modal Footer</h3>
+            </div>
+        </div>
+
     </div>
 
     <footer>
@@ -165,6 +101,9 @@
             <p>© 2025 PorteShop — Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/boutique.js"></script>
 </body>
 
 </html>

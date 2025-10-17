@@ -16,7 +16,7 @@
 }
 
 body {
-    background: rgb(220, 236, 255);
+    background: var(--background);
 }
 
 .logo {
@@ -44,67 +44,134 @@ body {
     color: var(--accent);
 }
 
-.door-handles {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 12px;
-    padding-right: 12px;
-}
-
-.product-container {
-    z-index: -1;
-
-    margin-left: 64px;
-    margin-right: 64px;
-    border: #16425B;
-    border-style: none;
-
-    box-shadow: #000000 2px 2px 20px 2px;
-}
-
-.door-handles img {
-    width: 220px;
-    height: 220px;
-}
-
-.handle-card img {
-    border-radius: 10px 10px 0px 0px;
-}
-
-.handle-card {
-    z-index: 1;
-    outline: #16425B;
-    outline-style: solid;
-    outline-width: 2px;
-    border-radius: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 24px;
-
-    /* background: linear-gradient(to top, #9595b8, #ddeeff); */
-    background: linear-gradient(to top, var(--secondary), var(--background));
-}
-
-.handle-card h2 {
-    text-align: center;
-    justify-self: center;
-    font-weight: 400;
-    font-size: 24px;
-}
-
 .products h1 {
-    margin-top: 32px;
-    font-weight: 200;
-    margin-left: 1vi;
+    color: var(--bold);
+    text-align: center;
+    font-size: x-large;
 }
 
-.products p {
-    margin-left: 10vi;
+.door-handles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 950px;
+    margin: 0 auto 32px auto;
+    justify-items: center;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+}
 
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 220/390;
+    min-width: 180px;
+    border: #3A7CA5;
+    border-radius: 8px;
+    border-style: groove;
+    margin-bottom: 0px;
+    background: linear-gradient(to bottom, var(--background), rgb(216, 236, 245));
+    box-sizing: border-box;
+}
+
+.product-card p {
+    color: var(--bold);
+    text-align: center;
+    padding: 10px;
+    margin-top: 2px;
+}
+
+.product-card h2 {
+    color: var(--accent);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.top-card {
+    display: grid;
+    background-color: #3A7CA5;
+}
+
+.top-card img {
+    margin-top: 3px;
+    width: 148px;
+    justify-self: center;
+    margin-bottom: 1px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.product-card button {
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    justify-self: center;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    width: 90%;
+
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.1s ease, box-shadow 0.3s ease;
+
+}
+
+.product-card button:active {
+    background-color: var(--bold);
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.0);
+}
+
+.price {
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
+
+.top-card {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.top-card img {
+    margin: 0;
+    width: 100%;
+    height: 206px;
+    filter: brightness(80%);
+    transition: filter 0.8s ease;
+}
+
+.top-card img:hover {
+    filter: brightness(100%);
+}
+
+/*https://www.w3schools.com/howto/howto_css_button_on_image.asp*/
+/* Style the button and place it in the middle of the container/image */
+.top-card .learn-more {
+  position: absolute;
+  top: 12%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #ffffff44;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30%;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+.top-card .learn-more:hover {
+  background-color: #ffffff99;
 }
