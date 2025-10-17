@@ -27,7 +27,7 @@ body {
 }
 
 
-ul li a {
+.navbar ul li a {
   display: block;
   text-align: center;
   padding: 14px 16px;
@@ -37,25 +37,22 @@ ul li a {
   transition: background-color 0.3s ease;
 }
 
-ul li .material-symbols-outlined {
+.navbar ul li .material-symbols-outlined {
   padding-bottom: 10px;
   padding-top: 12px;
 }
 
-ul li a:hover {
+.navbar ul li a:hover {
   background-color: var(--bold);
 }
 
- ul {
+.navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-ul li {
+.navbar ul li {
     float: left;
-}
-
-.navbar li {
 }
