@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Roboto, sans-serif;
-    background-color: #D9DCD6;
+    background-color: #ffffff;
     color: #16425B;
 }
 
@@ -15,6 +15,7 @@ h1, h2, h3 {
 p {
     margin-bottom: 1em;
 }
+
 
 /* =============================
    Contenu principal
@@ -101,12 +102,12 @@ p {
 }
 
 .valeur:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
     box-shadow: 0 8px 20px rgba(22, 66, 91, 0.5);
 }
 
 .valeur .icon {
-    font-size: 40px;
+    font-size: 60px;
     color: #81C3D7;
     margin-bottom: 10px;
 }
@@ -291,7 +292,7 @@ p {
     }
 
     .valeur {
-        width: 100%;
+        width: 80%;
         padding: 20px;
     }
 
