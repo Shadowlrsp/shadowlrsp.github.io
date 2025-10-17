@@ -1,0 +1,191 @@
+:root {
+    --main: #2F6690;
+    --accent: #3A7CA5;
+    --background: #D9DCD6;
+    --bold: #16425B;
+    --secondary: #81c3d7;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url("assets/fonts/inter.ttf");
+}
+
+* {
+    font-family: 'inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #803c00;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent 10%, rgba(0,0,0,0.6));
+
+}
+
+/*Start search-bar*/
+.Search-bar{
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    
+}
+
+.Search-bar .Search-input{
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 40%;
+  background-color: rgb(214, 198, 198);
+  border-radius: 5px;
+}
+
+.Search-input::placeholder{
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  /*medias querries nécessaire*/
+}
+
+.Search-bar-logo{
+  text-align: left;
+  left: 50px;
+  /*display: none; /***/
+
+
+}
+
+/*end search-bar*/
+
+.mainContent {
+  opacity: 1; /*tempo (=0) */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+#mainContent.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.MainTitle {
+  text-align: center;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--background);
+  color: var(--main);
+  border-radius: 20px;
+  width: 70%;
+  font-size: 1.5vw; /*@medias querries a ajouter*/
+
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+@media all and (max-width: 560px) {
+  .MainTitle{
+    font-size: 4vw;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.MainTitle:hover {
+  transform: perspective(1000px) rotateX(0deg) translateZ(25px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/*door style*/
+
+.door-container {
+  display: none; /*temps*/ 
+  opacity: 0; /*tempo (=1)*/
+  position: absolute;
+  width: 300px;
+  height: 700px;
+  perspective: 2000px;
+  cursor: pointer;
+  transition: opacity 0.5s ease-out;
+  z-index: 10;
+}
+
+.door-container.zooming {
+  transform: scale(15);
+  opacity: 1;
+  transition: transform 1.5s ease-in;
+}
+
+.door-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff8f8;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.door {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  transform-origin: left center;
+  transition: transform 1s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.door.open {
+  transform: rotateY(-110deg);
+}
+
+.door-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Assets/textureporte.png);
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #3b1f0b;
+  border-radius: 6px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doorHint {
+  color: rgb(138, 121, 121);
+  font-size: 1.5em;
+  position: relative;
+}
+
+.door.open .doorHint {
+  opacity: 0;
+}

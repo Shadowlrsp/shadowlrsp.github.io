@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PorteShop</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/logo.jpg">
-
-    <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/navbar.css">
+  <title>Bienvenue - PortesDesign</title>
 </head>
 <body>
-
+  
+  <div class="door-container" id="doorContainer">
+  <div class="door-inside"></div>
+  
+  <div class="door" id="door">
+    
+    <div class="door-front">
+      <div class="doorHint">Cliquez!</div>
+      <div class="handle"></div>
+    </div>
+    </div>
+  </div>
+  
+  <main id="mainContent" class="mainContent"> <!-- Uniquement visible après anim porte-->
+    
     <header>
+
+      <section class="Search-bar"> <!-- Au dessus de la navbar-->
+          <img src="../Assets/logo.jpg" alt="" class="Search-bar-logo">
+          
+          <input type="text" id="search" placeholder="Rechercher des produits, catégories, ..." class="Search-input">
+
+        <!--fake bouton -->
+      </section>
+
         <div class="navbar">
             <ul>
                 <li> <a href="index.html">Accueil</a> </li>
@@ -23,12 +45,20 @@
             </ul>
         </div>
         <div class="logo">
-            PorteShop
         </div>
     </header>
 
-    <section>
-
+    <section class="MainTitle">
+      <h2>Bienvenue sur <span style="color: var(--secondary-color);">PorteShop</span></h2>
+      <p>Le spécialiste de la porte depuis 1990</p>
     </section>
+    
+    <section class="Discovers">
+        <h2>
+
+        </h2>
+    </section>
+  </main>
+  <script src="../scripts/index.js"></script>
 </body>
 </html>
