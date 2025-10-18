@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
 }
 
 :root {
@@ -13,18 +12,16 @@
     --neoncolor: #afecff;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-     background: linear-gradient(290deg, #3a7ca5f6, #2f66905b, #16425bc0, #81c3d75b);
+    background: linear-gradient(290deg, #3a7ca5f6, #2f66905b, #16425bc0, #81c3d75b);
     background-size: 400% 400%;
     animation: linearGradient 15s ease infinite;
     display: flex;
@@ -36,22 +33,23 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
-    
 }
 
 main {
     width: 100%;
-    height: fit-content;
     display: flex;
     margin-top: 2%;
     flex-grow: 1;
-   
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .titre_principal {
@@ -60,20 +58,30 @@ main {
     margin-bottom: 2%;
     font-size: 3em;
     animation: neon 5s infinite;
+    width: 100%;
 }
 
 @keyframes neon {
-    0%,39%,41%,59%,61%,100% {
+
+    0%,
+    39%,
+    41%,
+    59%,
+    61%,
+    100% {
         text-shadow: 0 0 5px var(--neoncolor), 0 0 10px var(--neoncolor), 0 0 20px var(--neoncolor), 0 0 40px var(--neoncolor), 0 0 80px var(--neoncolor);
     }
-    40%,60% {
+
+    40%,
+    60% {
         text-shadow: none;
-}}
+    }
+}
 
 /* ====================
         Paiement
-   ==================*/
-totalpayment {
+   ================== */
+.total-payment {
     border-top: 2px solid var(--bold);
     border-left: 2px solid var(--bold);
     background: white;
@@ -92,12 +100,13 @@ totalpayment {
     border-radius: 18px;
 }
 
-totalpayment h2 {
+.total-payment h2 {
     font-weight: bold;
     color: var(--bold)
 }
 
-livraison {
+
+.livraison {
     margin-top: 2%;
     font-size: 1em;
 }
@@ -110,7 +119,7 @@ livraison {
 }
 
 
-total {
+.total {
     margin-top: 10%;
     font-size: 1.3em;
     font-weight: bold;
@@ -132,7 +141,7 @@ total {
     background-color: #45a049;
 }
 
-selectionpayment {
+.selection-payment {
     margin-top: 5%;
 }
 
@@ -146,7 +155,7 @@ selectionpayment {
 /* ================
         Panier
    ================ */
-produitpanier {
+.produit-panier {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -176,7 +185,8 @@ produitpanier {
 /* ================
         Produit
    ================*/
-produit {
+
+.produit {
     display: flex;
     flex-direction: row;
     border-top: 2px solid var(--bold);
@@ -189,12 +199,12 @@ produit {
     border-radius: 10px;
 }
 
-produit img {
+.produit img {
     width: 150px;
     height: 150px;
 }
 
-produit p {
+.produit p {
     font-size: 20px;
 }
 
@@ -212,7 +222,7 @@ produit p {
 .produitprix {
     text-align: center;
     margin-left: auto;
-    width: 100px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -222,17 +232,22 @@ produit p {
 
 
 .removebtn {
-    margin: 20px;
+    height: 30px;
+    width: 30px;
     padding: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     background: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .removebtnimg {
-    width: 30px;
-    height: 30px;
+    width: 20px !important;
+    height: 20px !important;
     filter: brightness(0%);
 }
 
@@ -244,13 +259,14 @@ produit p {
     cursor: pointer;
     font-size: 20px;
     border-radius: 10px;
-    color: white; /* Ajout pour la lisibilité */
+    color: white;
 }
 
 .qty {
     margin: 0 10px;
     font-size: 25px;
 }
+
 
 /* ===========================
    Footer
@@ -263,4 +279,114 @@ footer {
     margin-top: 100px;
     font-size: 0.9rem;
     box-shadow: 0 -6px 25px rgba(129, 195, 215, 0.3);
-}   centre titre principal
+}
+
+
+
+/* === Tablettes et petits ordinateurs portables === */
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .titre_principal {
+        margin-top: 20px;
+    }
+
+
+    .produit-panier {
+        width: 90%;
+        margin: 20px 0;
+        order: 1;
+    }
+
+    .total-payment {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 90%;
+        margin: 20px 0;
+        order: 2;
+    }
+}
+
+/* === Mobiles === */
+@media (max-width: 768px) {
+    .titre_principal {
+        font-size: 2.2em;
+    }
+
+
+    .produit {
+        flex-direction: column;
+        align-items: center;
+        padding: 4%;
+        width: 90%;
+        height: 350px;
+    }
+
+
+
+    .centrage {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .imgproduit {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .produit img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .produitinfo h1 {
+        font-size: 1.5em;
+    }
+
+    .produit p {
+        font-size: 16px;
+    }
+
+    .produitprix {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+/* === Petits Mobiles === */
+@media (max-width: 480px) {
+    .titre_principal {
+        font-size: 1.8em;
+    }
+
+
+    .produit-panier,
+    .total-payment {
+        width: 95%;
+    }
+
+    .produit {
+        width: 90%;
+        height: 330px;
+    }
+
+    .produit img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .qty {
+        font-size: 20px;
+    }
+
+    .paybtn {
+        font-size: 18px;
+    }
+}

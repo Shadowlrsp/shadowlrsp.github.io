@@ -1,75 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
-    <link rel="stylesheet" href="style/panier.css">
+    <title>Votre Panier - PorteShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <title>Document</title>
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/panier.css">
 </head>
 
 <body>
 
-
     <header>
-
         <div class="navbar">
             <ul class="navbar-links">
                 <li> <a href="index.html">Accueil</a> </li>
                 <li> <a href="boutique.html">Boutique</a> </li>
-                <li> <a href="propos.html">A propos</a> </li>
+                <li> <a href="propos.html">À propos</a> </li>
                 <li>
                     <a href="panier.html" class="material-symbols-outlined">shopping_cart</a>
                 </li>
             </ul>
         </div>
     </header>
+
     <h1 class="titre_principal">Votre Panier</h1>
+
     <main>
-        
-        <totalpayment>
+        <aside class="total-payment">
             <h2>Détails du paiement:</h2>
-            <soustotal>Sous-total: 0.00 </soustotal>
-            <livraison>Livraison: 0.00 </livraison>
+            <p class="sous-total">Sous-total: 0.00 €</p>
+            <p class="livraison">Livraison: 0.00 €</p>
+
             <h3>Méthode de livraison:</h3>
             <select name="livraison" id="livraisonmethod">
-                <option value="colissimo">colissimo</option>
-                <option value="mondial_relay">mondial relay</option>
-                <option value="chronopost">chronopost</option>
+                <option value="colissimo">Colissimo</option>
+                <option value="mondial_relay">Mondial Relay</option>
+                <option value="chronopost">Chronopost</option>
             </select>
-            <total>Total: 0.00</total>
+
+            <p class="total">Total: 0.00 €</p>
             <button class="paybtn">Payer</button>
-            <selectionpayment>
+
+            <div class="selection-payment">
                 <h3>Méthode de paiement:</h3>
                 <select name="payment" id="payment">
                     <option value="creditcard">Carte de crédit</option>
                     <option value="paypal">PayPal</option>
                     <option value="banktransfer">Virement bancaire</option>
                 </select>
-            </selectionpayment>
-            <img src="assets/panier/carte.jpg" alt="méthodes de paiement" id="paymentimg">
-        </totalpayment>
-        <produitpanier>
+            </div>
+            <img src="assets/panier/carte.jpg" alt="Logos des méthodes de paiement" id="paymentimg">
+        </aside>
+
+        <section class="produit-panier">
             <div id="panier-vide-message">
                 Votre panier est actuellement vide.
             </div>
-            <produit data-price="25.50">
+
+            <article class="produit" data-price="25.50">
                 <div class="centrage">
                     <div class="produitimg">
-                        <img src="assets/panier/poignees/poignee1.jpg" alt="Description de l'image">
+                        <img src="assets/panier/poignees/poignee1.jpg" alt="Poignée de porte dorée, base carrée">
                     </div>
                     <div class="produitinfo">
-                        <h1>poignée couleur doré</h1>
-                        <p>Finition: couleur or, base carré</p>
+                        <h1>Poignée couleur dorée</h1>
+                        <p>Finition : couleur or, base carrée</p>
                     </div>
                 </div>
                 <div class="produitprix">
-                    <p>Prix: 25.50€</p>
-
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -78,22 +83,21 @@
                     <button class="removebtn"><img src="assets/panier/poubelle.svg" class="removebtnimg"
                             alt="Supprimer"></button>
                 </div>
+            </article>
 
-            </produit>
-
-            <produit data-price="25.50">
+            <article class="produit" data-price="25.50">
                 <div class="centrage">
                     <div class="produitimg">
-                        <img src="assets/panier/poignees/poignee1.jpg" alt="Description de l'image" class="imgproduit">
+                        <img src="assets/panier/poignees/poignee1.jpg" alt="Poignée de porte dorée, base carrée"
+                            class="imgproduit">
                     </div>
                     <div class="produitinfo">
-                        <h1>poignée couleur doré</h1>
-                        <p>Finition: couleur or, base carré</p>
+                        <h1>Poignée couleur dorée</h1>
+                        <p>Finition : couleur or, base carrée</p>
                     </div>
                 </div>
                 <div class="produitprix">
-                    <p>Prix: 25.50€</p>
-
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -102,21 +106,21 @@
                     <button class="removebtn"><img src="assets/panier/poubelle.svg" class="removebtnimg"
                             alt="Supprimer"></button>
                 </div>
+            </article>
 
-            </produit>
-            <produit data-price="25.50">
+            <article class="produit" data-price="25.50">
                 <div class="centrage">
                     <div class="produitimg">
-                        <img src="assets/panier/poignees/poignee1.jpg" alt="Description de l'image" class="imgproduit">
+                        <img src="assets/panier/poignees/poignee1.jpg" alt="Poignée de porte dorée, base carrée"
+                            class="imgproduit">
                     </div>
                     <div class="produitinfo">
-                        <h1>poignée couleur doré</h1>
-                        <p>Finition: couleur or, base carré</p>
+                        <h1>Poignée couleur dorée</h1>
+                        <p>Finition : couleur or, base carrée</p>
                     </div>
                 </div>
                 <div class="produitprix">
-                    <p>Prix: 25.50€</p>
-
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -125,10 +129,9 @@
                     <button class="removebtn"><img src="assets/panier/poubelle.svg" class="removebtnimg"
                             alt="Supprimer"></button>
                 </div>
+            </article>
 
-            </produit>
-
-        </produitpanier>
+        </section>
     </main>
 
     <footer class="footer">
