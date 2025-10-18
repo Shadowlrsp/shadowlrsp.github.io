@@ -60,6 +60,12 @@ selectionpayment {
     background-color: #45a049; 
 }
 
+#paymentimg {
+    margin-top: 10%;
+    width: 90%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
 
 
 

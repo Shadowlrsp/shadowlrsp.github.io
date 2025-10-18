@@ -35,6 +35,12 @@
             <h2>Détails du paiement:</h2>
             <soustotal>Sous-total: 0.00 </soustotal>
             <livraison>Livraison: 0.00 </livraison>
+            <h3>Méthode de livraison:</h3>
+                <select name="livraison" id="livraisonmethod">
+                    <option value="colissimo">colissimo</option>
+                    <option value="mondial_relay">mondial relay</option>
+                    <option value="chronopost">chronopost</option>
+                </select>
             <total>Total: 0.00 </total>
             <button class="paybtn">Payer</button>
             <selectionpayment>
@@ -45,18 +51,19 @@
                     <option value="banktransfer">Virement bancaire</option>
                 </select>
             </selectionpayment>
+            <img src="assets/panier/carte.jpg" alt="méthodes de paiement" id="paymentimg">
         </totalpayment>
         <!-- =============================================produits========================================== -->
 
         <produitpanier>
-            <produit>
+            <produit data-price="25.50">
                 <div class="produitimg">
                     <img src="images/produit1.jpg" alt="">
                 </div>
                 <div class="produitinfo">
-                    <h2>Nom du produit</h2>
+                    <h2>Nom du produit 1</h2>
                     <p>Description du produit</p>
-                    <p>Prix: 0.00 </p>
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -65,14 +72,14 @@
                     <button class="removebtn">Supprimer</button>
                 </div>
             </produit>
-            <produit>
+            <produit data-price="25.50">
                 <div class="produitimg">
                     <img src="images/produit1.jpg" alt="">
                 </div>
                 <div class="produitinfo">
-                    <h2>Nom du produit</h2>
+                    <h2>Nom du produit 1</h2>
                     <p>Description du produit</p>
-                    <p>Prix: 0.00 </p>
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -81,14 +88,14 @@
                     <button class="removebtn">Supprimer</button>
                 </div>
             </produit>
-            <produit>
+            <produit data-price="25.50">
                 <div class="produitimg">
                     <img src="images/produit1.jpg" alt="">
                 </div>
                 <div class="produitinfo">
-                    <h2>Nom du produit</h2>
+                    <h2>Nom du produit 1</h2>
                     <p>Description du produit</p>
-                    <p>Prix: 0.00 </p>
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -97,14 +104,14 @@
                     <button class="removebtn">Supprimer</button>
                 </div>
             </produit>
-            <produit>
+            <produit data-price="25.50">
                 <div class="produitimg">
                     <img src="images/produit1.jpg" alt="">
                 </div>
                 <div class="produitinfo">
-                    <h2>Nom du produit</h2>
+                    <h2>Nom du produit 1</h2>
                     <p>Description du produit</p>
-                    <p>Prix: 0.00 </p>
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -113,14 +120,14 @@
                     <button class="removebtn">Supprimer</button>
                 </div>
             </produit>
-            <produit>
+            <produit data-price="25.50">
                 <div class="produitimg">
                     <img src="images/produit1.jpg" alt="">
                 </div>
                 <div class="produitinfo">
-                    <h2>Nom du produit</h2>
+                    <h2>Nom du produit 1</h2>
                     <p>Description du produit</p>
-                    <p>Prix: 0.00 </p>
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -129,14 +136,14 @@
                     <button class="removebtn">Supprimer</button>
                 </div>
             </produit>
-            <produit>
+            <produit data-price="25.50">
                 <div class="produitimg">
                     <img src="images/produit1.jpg" alt="">
                 </div>
                 <div class="produitinfo">
-                    <h2>Nom du produit</h2>
+                    <h2>Nom du produit 1</h2>
                     <p>Description du produit</p>
-                    <p>Prix: 0.00 </p>
+                    <p>Prix: 25.50 €</p>
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
@@ -145,14 +152,13 @@
                     <button class="removebtn">Supprimer</button>
                 </div>
             </produit>
-
         </produitpanier>
 
 
 
     </main>
 
-
+    <script src="script/panier.js"></script>
 </body>
 
 </html>
