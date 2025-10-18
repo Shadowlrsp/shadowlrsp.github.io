@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const livraisonElement = document.querySelector('livraison');
     const totalElement = document.querySelector('total');
     const livraisonMethodSelect = document.querySelector('#livraisonmethod');
+    const messagePanierVide = document.querySelector('#panier-vide-message');
 
     // prix de livraison
     const fraisDeLivraison = {
@@ -17,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let sousTotal = 0;
         
         const tousLesProduits = document.querySelectorAll('produit');
+        if (tousLesProduits.length === 0) {
+            messagePanierVide.style.display = 'block';
+        } else {
+            messagePanierVide.style.display = 'none';
+        }
+        
 
         tousLesProduits.forEach(produit => {
             const prix = parseFloat(produit.dataset.price); 
@@ -71,4 +78,5 @@ document.addEventListener('DOMContentLoaded', () => {
         mettreAJourLeTotal();
     });
     mettreAJourLeTotal();
+  
 });
