@@ -1,27 +1,53 @@
 /* =============================
-   Base du site
+   Palette et Base
+   ============================= */
+:root {
+    --bleu-fonce: #16425B;
+    --bleu-moyen: #2F6690;
+    --bleu-clair: #3A7CA5;
+    --accent: #81C3D7;
+    --beige: #D9DCD6;
+    --halo: rgba(129, 195, 215, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =============================
+   Fond dégradé 
    ============================= */
 body {
-    margin: 0;
     font-family: 'Segoe UI', Roboto, sans-serif;
-    background-color: #ffffff;
-    color: #16425B;
+    color: var(--bleu-fonce);
+    overflow-x: hidden;
+    position: relative;
+    background: linear-gradient(60deg, var(--bleu-clair), var(--bleu-moyen), var(--bleu-fonce));
+    scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
-    color: #16425B;
+/* =============================
+   Animation fade-in au scroll
+   ============================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
-p {
-    margin-bottom: 1em;
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
-
 
 /* =============================
    Contenu principal
    ============================= */
 .content {
-    padding: 50px 10%;
+    padding: 60px 10%;
+    position: relative;
+    z-index: 1;
 }
 
 /* =============================
@@ -29,287 +55,235 @@ p {
    ============================= */
 .apropos-intro {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 90px;
+    animation: fadeUp 1s ease;
 }
-
 .apropos-intro h1 {
-    color: #2F6690;
-    font-size: 2rem;
-    border-bottom: 3px solid #81C3D7;
+    color: var(--bleu-clair);
+    font-size: 2.8rem;
+    border-bottom: 3px solid var(--accent);
     display: inline-block;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     margin-bottom: 25px;
+    position: relative;
+    text-shadow: 0 0 30px rgba(129,195,215,0.6);
 }
-
+.apropos-intro h1::after {
+    content: "";
+    position: absolute;
+    left: -20%;
+    bottom: -8px;
+    width: 140%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--bleu-clair));
+    border-radius: 2px;
+    box-shadow: 0 0 15px var(--accent);
+}
 .apropos-intro p {
-    max-width: 800px;
-    margin: 0 auto 15px;
+    max-width: 850px;
+    margin: 0 auto 20px;
     text-align: justify;
+    font-size: 1.05rem;
+    color: var(--beige);
 }
 
 /* =============================
-   Section : Présentation (Qui sommes-nous ?)
+   Section : Qui sommes-nous ?
    ============================= */
 .intro h2 {
-    color: #2F6690;
-    border-bottom: 3px solid #81C3D7;
+    color: var(--bleu-clair);
+    border-bottom: 2px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(129,195,215,0.4);
 }
-
 .intro p {
-    margin-bottom: 1.2em;
+    margin-bottom: 1.3em;
     text-align: justify;
+    color: var(--beige);
 }
 
 /* =============================
-   Section : Valeurs
+   Section : Nos valeurs
    ============================= */
 .valeurs {
-    background-color: #3A7CA5;
-    color: #D9DCD6;
-    padding: 60px 10%;
-    border-radius: 20px;
-    margin: 80px auto;
-    box-shadow: 0 6px 18px rgba(22, 66, 91, 0.3);
+    background: rgba(58, 124, 165, 0.65);
+    color: var(--beige);
+    border-radius: 25px;
+    padding: 80px 10%;
+    margin: 100px auto;
     text-align: center;
+    box-shadow: 0 0 30px rgba(129,195,215,0.25);
+    backdrop-filter: blur(20px) brightness(1.2);
 }
-
 .valeurs h2 {
-    color: #D9DCD6;
-    border-bottom: 3px solid #81C3D7;
+    color: var(--beige);
+    border-bottom: 3px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px rgba(129,195,215,0.5);
 }
-
 .valeurs-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 35px;
 }
-
 .valeur {
-    background-color: #16425B;
-    color: #D9DCD6;
-    border-radius: 15px;
-    padding: 25px;
-    width: 280px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(22, 66, 91, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    width: 290px;
+    box-shadow: 0 0 25px rgba(129,195,215,0.25);
+    transition: all 0.4s ease;
 }
-
 .valeur:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 8px 20px rgba(22, 66, 91, 0.5);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 40px rgba(129,195,215,0.5);
 }
-
 .valeur .icon {
-    font-size: 60px;
-    color: #81C3D7;
-    margin-bottom: 10px;
+    font-size: 70px;
+    color: var(--accent);
+    margin-bottom: 15px;
+    text-shadow: 0 0 25px rgba(129,195,215,0.8);
 }
 
 /* =============================
    Section : Histoire
    ============================= */
 .histoire {
-    margin: 80px auto;
-    padding: 0 10%;
+    margin: 100px auto;
 }
-
 .histoire h2 {
-    color: #2F6690;
-    border-bottom: 3px solid #81C3D7;
+    color: var(--bleu-clair);
+    border-bottom: 3px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(129,195,215,0.5);
 }
-
 .histoire p {
     text-align: justify;
-    margin-bottom: 1.2em;
+    margin-bottom: 1.3em;
+    font-size: 1.05rem;
+    color: var(--beige);
 }
-
 .histoire img {
     display: block;
     max-width: 100%;
-    border-radius: 15px;
-    margin: 40px auto;
-    box-shadow: 0 6px 20px rgba(22, 66, 91, 0.3);
+    border-radius: 20px;
+    margin: 50px auto;
+    box-shadow: 0 0 25px rgba(129,195,215,0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.histoire img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(129,195,215,0.6);
 }
 
 /* =============================
-   Section : Formulaire de contact
+   Section : Contact
    ============================= */
 .contact-form {
-    background-color: #3A7CA5;
-    color: #D9DCD6;
-    padding: 60px 10%;
-    border-radius: 20px;
-    margin: 80px auto;
-    box-shadow: 0 8px 20px rgba(22, 66, 91, 0.3);
+    background: linear-gradient(135deg, var(--bleu-clair), var(--bleu-moyen));
+    color: var(--beige);
+    border-radius: 25px;
+    padding: 80px 10%;
+    margin: 100px auto;
     text-align: center;
+    box-shadow: 0 0 40px rgba(129,195,215,0.3);
+    backdrop-filter: blur(15px) brightness(1.1);
 }
-
 .contact-form h2 {
-    color: #D9DCD6;
-    border-bottom: 3px solid #81C3D7;
+    border-bottom: 3px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(129,195,215,0.5);
 }
-
-.contact-form p {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    color: #D9DCD6;
-}
-
 .form-group {
     margin-bottom: 25px;
     text-align: left;
-    max-width: 600px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
-
 .form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
-    color: #D9DCD6;
 }
-
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #81C3D7;
-    border-radius: 10px;
+    padding: 14px 18px;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
     font-size: 1rem;
-    color: #16425B;
-    background-color: #D9DCD6;
+    color: var(--bleu-fonce);
+    background-color: var(--beige);
     transition: all 0.3s ease;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2F6690;
-    box-shadow: 0 0 8px rgba(129, 195, 215, 0.8);
+    border-color: var(--bleu-moyen);
+    box-shadow: 0 0 15px var(--accent);
 }
-
 .send-btn {
-    background-color: #16425B;
-    color: #D9DCD6;
+    background-color: var(--bleu-fonce);
+    color: var(--beige);
     border: none;
-    padding: 12px 30px;
+    padding: 14px 40px;
     font-size: 1.1rem;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    box-shadow: 0 0 30px rgba(129,195,215,0.3);
 }
-
 .send-btn:hover {
-    background-color: #2F6690;
-    transform: translateY(-2px);
+    background-color: var(--bleu-moyen);
+    box-shadow: 0 0 50px rgba(129,195,215,0.6);
 }
 
 /* =============================
    Pied de page
    ============================= */
 .footer {
-    background-color: #16425B;
-    color: #D9DCD6;
+    background-color: var(--bleu-fonce);
+    color: var(--beige);
     text-align: center;
-    padding: 25px;
+    padding: 30px;
     margin-top: 100px;
     font-size: 0.9rem;
-    letter-spacing: 0.5px;
+    box-shadow: 0 -6px 25px rgba(129,195,215,0.3);
 }
 
+/* =============================
+   Parallaxe titres
+   ============================= */
+h1, h2 {
+    transition: transform 0.4s ease-out;
+    will-change: transform;
+}
 
 /* =============================
    Responsive
-   =============================
-*/
-
-/* --- 992px --- */
+   ============================= */
 @media screen and (max-width: 992px) {
-
-    .content {
-        padding: 40px 6%;
-    }
-
-    .valeurs-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .valeur {
-        width: 80%;
-    }
-
-    .apropos-intro h1 {
-        font-size: 1.8rem;
-    }
-
-    .histoire img {
-        width: 90%;
-    }
-
-    .contact-form {
-        padding: 40px 8%;
-    }
-
-    .form-group {
-        max-width: 90%;
-    }
+    .content { padding: 40px 6%; }
+    .valeurs-container { flex-direction: column; align-items: center; }
+    .valeur { width: 85%; }
 }
-
-/* ---  600px --- */
 @media screen and (max-width: 600px) {
-
-    body {
-        font-size: 0.95rem;
-    }
-
-    .apropos-intro h1 {
-        font-size: 1.5rem;
-    }
-
-    .intro h2,
-    .valeurs h2,
-    .histoire h2,
-    .contact-form h2 {
-        font-size: 1.3rem;
-    }
-
-    .valeur {
-        width: 80%;
-        padding: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-
-    .send-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .footer {
-        font-size: 0.8rem;
-        padding: 20px;
-    }
+    body { font-size: 0.95rem; }
+    .apropos-intro h1 { font-size: 1.8rem; }
+    .valeur { width: 90%; padding: 25px; }
+    .send-btn { width: 100%; justify-content: center; }
 }
-
