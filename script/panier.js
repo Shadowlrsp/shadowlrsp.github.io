@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //fonction de calcul du total
     function mettreAJourLeTotal() {
         let sousTotal = 0;
-        
+        //message panier vide
         const tousLesProduits = document.querySelectorAll('produit');
         if (tousLesProduits.length === 0) {
             messagePanierVide.style.display = 'block';
