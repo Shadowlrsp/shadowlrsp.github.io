@@ -8,13 +8,13 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
     <link rel="stylesheet" href="style/panier.css">
+
     <title>Document</title>
 </head>
 
 <body>
 
 
-    <!-- ==========================================haeder========================================== -->
     <header>
 
         <div class="navbar">
@@ -28,9 +28,9 @@
             </ul>
         </div>
     </header>
-    <!-- ==========================================main========================================== -->
+    <h1 class="titre_principal">Votre Panier</h1>
     <main>
-        <!-- =====================================payment details========================================== -->
+        
         <totalpayment>
             <h2>Détails du paiement:</h2>
             <soustotal>Sous-total: 0.00 </soustotal>
@@ -41,7 +41,7 @@
                 <option value="mondial_relay">mondial relay</option>
                 <option value="chronopost">chronopost</option>
             </select>
-            <total>Total: 0.00 </total>
+            <total>Total: 0.00</total>
             <button class="paybtn">Payer</button>
             <selectionpayment>
                 <h3>Méthode de paiement:</h3>
@@ -53,8 +53,6 @@
             </selectionpayment>
             <img src="assets/panier/carte.jpg" alt="méthodes de paiement" id="paymentimg">
         </totalpayment>
-        <!-- =============================================produits========================================== -->
-
         <produitpanier>
             <div id="panier-vide-message">
                 Votre panier est actuellement vide.
@@ -65,42 +63,67 @@
                         <img src="assets/panier/poignees/poignee1.jpg" alt="Description de l'image">
                     </div>
                     <div class="produitinfo">
-                        <h2>poignée couleur doré</h2>
+                        <h1>poignée couleur doré</h1>
                         <p>Finition: couleur or, base carré</p>
                     </div>
                 </div>
                 <div class="produitprix">
-                    <p>Prix: 25.50 €</p>
+                    <p>Prix: 25.50€</p>
 
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
                         <button class="increase">+</button>
                     </div>
-                     <button class="removebtn" ><img src="assets/panier/poubelle.svg" class="removebtnimg"></button>
+                    <button class="removebtn"><img src="assets/panier/poubelle.svg" class="removebtnimg"
+                            alt="Supprimer"></button>
                 </div>
 
             </produit>
 
-          <produit data-price="25.50">
+            <produit data-price="25.50">
                 <div class="centrage">
                     <div class="produitimg">
                         <img src="assets/panier/poignees/poignee1.jpg" alt="Description de l'image" class="imgproduit">
                     </div>
                     <div class="produitinfo">
-                        <h2>poignée couleur doré</h2>
+                        <h1>poignée couleur doré</h1>
                         <p>Finition: couleur or, base carré</p>
                     </div>
                 </div>
                 <div class="produitprix">
-                    <p>Prix: 25.50 €</p>
+                    <p>Prix: 25.50€</p>
 
                     <div class="quantity">
                         <button class="decrease">-</button>
                         <span class="qty">1</span>
                         <button class="increase">+</button>
                     </div>
-                    <button class="removebtn" ><img src="assets/panier/poubelle.svg" class="removebtnimg"></button>
+                    <button class="removebtn"><img src="assets/panier/poubelle.svg" class="removebtnimg"
+                            alt="Supprimer"></button>
+                </div>
+
+            </produit>
+            <produit data-price="25.50">
+                <div class="centrage">
+                    <div class="produitimg">
+                        <img src="assets/panier/poignees/poignee1.jpg" alt="Description de l'image" class="imgproduit">
+                    </div>
+                    <div class="produitinfo">
+                        <h1>poignée couleur doré</h1>
+                        <p>Finition: couleur or, base carré</p>
+                    </div>
+                </div>
+                <div class="produitprix">
+                    <p>Prix: 25.50€</p>
+
+                    <div class="quantity">
+                        <button class="decrease">-</button>
+                        <span class="qty">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <button class="removebtn"><img src="assets/panier/poubelle.svg" class="removebtnimg"
+                            alt="Supprimer"></button>
                 </div>
 
             </produit>
@@ -108,9 +131,12 @@
         </produitpanier>
     </main>
 
-    </main>
+    <footer class="footer">
+        <p>© 2025 PorteShop — Tous droits réservés.</p>
+    </footer>
 
     <script src="script/panier.js"></script>
+
 </body>
 
 </html>

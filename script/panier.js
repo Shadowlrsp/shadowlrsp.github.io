@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const fraisReels = sousTotal > 0 ? coutLivraison : 0;
         const totalFinal = sousTotal + fraisReels;
 
-        soustotalElement.textContent = `Sous-total: ${sousTotal.toFixed(2)} €`;
-        livraisonElement.textContent = `Livraison: ${fraisReels.toFixed(2)} €`;
+        soustotalElement.textContent = `Sous-total: ${sousTotal.toFixed(2)}€`;
+        livraisonElement.textContent = `Livraison: ${fraisReels.toFixed(2)}€`;
         totalElement.textContent = `Total: ${totalFinal.toFixed(2)} €`;
     }
 

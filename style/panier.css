@@ -4,25 +4,79 @@
     font-family: sans-serif;
 }
 
+:root {
+    --main: #2F6690;
+    --accent: #3A7CA5;
+    --background: #D9DCD6;
+    --bold: #16425B;
+    --secondary: #81c3d7;
+    --neoncolor: #afecff;
+}
+
+
 html {
     scroll-behavior: smooth;
 }
 
+body {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+     background: linear-gradient(290deg, #3a7ca5f6, #2f66905b, #16425bc0, #81c3d75b);
+    background-size: 400% 400%;
+    animation: linearGradient 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes linearGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    
+}
 
 main {
     width: 100%;
     height: fit-content;
     display: flex;
     margin-top: 2%;
-
-
+    flex-grow: 1;
+   
 }
 
-totalpayment {
-    border-top: 2px solid #9e9e9e;
-    border-left: 2px solid #9e9e9e;
-    background: lightgray;
+.titre_principal {
+    text-align: center;
+    color: white;
+    margin-bottom: 2%;
+    font-size: 3em;
+    animation: neon 5s infinite;
+}
 
+@keyframes neon {
+    0%,39%,41%,59%,61%,100% {
+        text-shadow: 0 0 5px var(--neoncolor), 0 0 10px var(--neoncolor), 0 0 20px var(--neoncolor), 0 0 40px var(--neoncolor), 0 0 80px var(--neoncolor);
+    }
+    40%,60% {
+        text-shadow: none;
+}}
+
+/* ====================
+        Paiement
+   ==================*/
+totalpayment {
+    border-top: 2px solid var(--bold);
+    border-left: 2px solid var(--bold);
+    background: white;
     padding: 2%;
     display: flex;
     flex-direction: column;
@@ -31,21 +85,36 @@ totalpayment {
     height: fit-content;
     width: 15%;
     position: fixed;
-    top: 20%;
+    top: 26%;
     left: 75%;
     z-index: 0;
-    box-shadow: 0px 5px 20px black;
-
+    box-shadow: 0px 5px 20px var(--main);
+    border-radius: 18px;
 }
 
-selectionpayment {
-    margin-top: 10%;
+totalpayment h2 {
+    font-weight: bold;
+    color: var(--bold)
 }
 
+livraison {
+    margin-top: 2%;
+    font-size: 1em;
+}
+
+#livraisonmethod,
 #payment {
-    margin-top: 5%;
     padding: 5px;
     width: 90%;
+    font-size: 15px;
+}
+
+
+total {
+    margin-top: 10%;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--bold);
 }
 
 .paybtn {
@@ -56,24 +125,27 @@ selectionpayment {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .paybtn:hover {
     background-color: #45a049;
 }
 
+selectionpayment {
+    margin-top: 5%;
+}
+
 #paymentimg {
-    margin-top: 10%;
     width: 90%;
     height: auto;
     mix-blend-mode: multiply;
 }
 
 
-
-
-
-
+/* ================
+        Panier
+   ================ */
 produitpanier {
     position: relative;
     display: flex;
@@ -82,23 +154,13 @@ produitpanier {
     height: fit-content;
     margin-left: 5%;
     margin-right: 5%;
-    border: 2px solid #9e9e9e;
+    border: 2px solid var(--bold);
     padding: 5px;
     gap: 2%;
-    box-shadow: 0px 5px 20px black;
-}
-
-
-produit {
-    display: flex;
-    flex-direction: row;
-    border-top: 2px solid #9e9e9e;
-    border-left: 2px solid #9e9e9e;
-    background: lightgray;
-    padding: 2%;
-    margin: 5px;
-    height: fit-content;
-    width: 95%;
+    box-shadow: 0px 5px 20px var(--main);
+    border-radius: 10px;
+    background: white;
+    margin-top: 50px;
 }
 
 #panier-vide-message {
@@ -106,30 +168,38 @@ produit {
     padding: 20px;
     text-align: center;
     font-size: 1.5em;
-    color: black;
+    color: var(--bold);
     width: 95%;
-    border: 2px dashed #9e9e9e;
+    border: 2px dashed white;
+}
 
-
+/* ================
+        Produit
+   ================*/
+produit {
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid var(--bold);
+    border-left: 2px solid var(--bold);
+    background: var(--background);
+    padding: 2%;
+    margin: 5px;
+    height: fit-content;
+    width: 95%;
+    border-radius: 10px;
 }
 
 produit img {
     width: 150px;
     height: 150px;
 }
-.imgproduit{
+
+produit p {
+    font-size: 20px;
+}
+
+.imgproduit {
     margin-right: 20px;
-}
-
-total {
-    margin-top: 10%;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-livraison {
-    margin-top: 2%;
-    font-size: 1em;
 }
 
 .centrage {
@@ -140,7 +210,7 @@ livraison {
 }
 
 .produitprix {
-   text-align: center;
+    text-align: center;
     margin-left: auto;
     width: 100px;
     display: flex;
@@ -150,17 +220,47 @@ livraison {
     gap: 10px;
 }
 
-removebtn {
+
+.removebtn {
     margin: 20px;
     padding: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-   
+    background: var(--accent);
 }
 
-.removebtnimg{
+.removebtnimg {
     width: 30px;
     height: 30px;
-    filter:brightness(0%);
+    filter: brightness(0%);
 }
+
+.decrease,
+.increase {
+    padding: 2px 5px;
+    border: none;
+    background-color: var(--main);
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white; /* Ajout pour la lisibilité */
+}
+
+.qty {
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+footer {
+    background-color: var(--bold);
+    color: var(--background);
+    text-align: center;
+    padding: 30px;
+    margin-top: 100px;
+    font-size: 0.9rem;
+    box-shadow: 0 -6px 25px rgba(129, 195, 215, 0.3);
+}   centre titre principal
