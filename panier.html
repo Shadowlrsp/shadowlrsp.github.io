@@ -33,19 +33,22 @@
 
     <main>
         <aside class="total-payment">
-            <h2>Détails du paiement:</h2>
-            <p class="sous-total">Sous-total: 0.00 €</p>
-            <p class="livraison">Livraison: 0.00 €</p>
+            <div class="détails_paiement">
+                <h2>Détails du paiement:</h2>
+                <p class="sous-total">Sous-total: 0.00 €</p>
+                <p class="livraison">Livraison: 0.00 €</p>
+                <p class="total">Total: 0.00 €</p>
 
-            <h3>Méthode de livraison:</h3>
-            <select name="livraison" id="livraisonmethod">
-                <option value="colissimo">Colissimo</option>
-                <option value="mondial_relay">Mondial Relay</option>
-                <option value="chronopost">Chronopost</option>
-            </select>
-
-            <p class="total">Total: 0.00 €</p>
+            </div>
             <button class="paybtn">Payer</button>
+            <div class="livraison">
+                <h3>Méthode de livraison:</h3>
+                <select name="livraison" id="livraisonmethod">
+                    <option value="colissimo">Colissimo</option>
+                    <option value="mondial_relay">Mondial Relay</option>
+                    <option value="chronopost">Chronopost</option>
+                </select>
+            </div>
 
             <div class="selection-payment">
                 <h3>Méthode de paiement:</h3>
@@ -54,8 +57,9 @@
                     <option value="paypal">PayPal</option>
                     <option value="banktransfer">Virement bancaire</option>
                 </select>
+                <img src="assets/panier/carte.jpg" alt="Logos des méthodes de paiement" id="paymentimg">
             </div>
-            <img src="assets/panier/carte.jpg" alt="Logos des méthodes de paiement" id="paymentimg">
+
         </aside>
 
         <section class="produit-panier">

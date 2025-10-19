@@ -120,7 +120,7 @@ main {
 
 
 .total {
-    margin-top: 10%;
+
     font-size: 1.3em;
     font-weight: bold;
     color: var(--bold);
@@ -193,10 +193,10 @@ main {
     border-left: 2px solid var(--bold);
     background: var(--background);
     padding: 2%;
-    margin: 5px;
+    margin: 10px;
     height: fit-content;
-    width: 95%;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .produit img {
@@ -217,6 +217,7 @@ main {
     justify-content: center;
     flex-direction: row;
     width: 100%;
+    gap: 100px;
 }
 
 .produitprix {
@@ -281,6 +282,76 @@ footer {
     box-shadow: 0 -6px 25px rgba(129, 195, 215, 0.3);
 }
 
+@media (max-height:700px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .produit-panier {
+        order: 1;
+        gap: 10px;
+    }
+
+    .selection-payment {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .total-payment {
+        position: relative;
+        top: auto;
+        left: auto;
+        flex-direction: row;
+        width: 70%;
+        order: 2;
+        gap: 10px;
+        align-items: center;
+        /* Centre verticalement tous les blocs enfants */
+        justify-content: center;
+        /* Centre horizontalement les blocs */
+
+
+    }
+
+    #payment {
+        width: 200px;
+    }
+
+    .paybtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    #paymentimg {
+        width: 100%;
+        height: 70px;
+        mix-blend-mode: multiply;
+    }
+
+    .livraison {
+        width: 200px;
+
+    }
+
+    #livraisonmethod {
+        width: 200px;
+        justify-content: center;
+    }
+
+
+    footer {
+        margin-top: 50px;
+    }
+
+
+
+}
 
 
 /* === Tablettes et petits ordinateurs portables === */
@@ -300,7 +371,10 @@ footer {
         width: 90%;
         margin: 20px 0;
         order: 1;
+        gap: 10px;
     }
+
+
 
     .total-payment {
         position: relative;
@@ -309,6 +383,11 @@ footer {
         width: 90%;
         margin: 20px 0;
         order: 2;
+    }
+
+    .centrage {
+        gap: 20px;
+
     }
 }
 
@@ -322,8 +401,6 @@ footer {
     .produit {
         flex-direction: column;
         align-items: center;
-        padding: 4%;
-        width: 90%;
         height: 350px;
     }
 
@@ -367,13 +444,7 @@ footer {
     }
 
 
-    .produit-panier,
-    .total-payment {
-        width: 95%;
-    }
-
     .produit {
-        width: 90%;
         height: 330px;
     }
 
