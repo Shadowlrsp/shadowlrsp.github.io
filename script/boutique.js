@@ -124,8 +124,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="add-to-cart">Ajouter au panier</button>
                 </div>
             `;
+            
+            const addToCartButton = card.querySelector('.add-to-cart');
+            addToCartButton.addEventListener('click', () => {
+                
+                const productToAdd = {
+                    id: handle.title.replace(/\s+/g, '-').toLowerCase(), 
+                    title: handle.title,
+                    price: parseFloat(handle.price.replace(',', '.').replace(' €', '')),
+                    img: handle.img,
+                    description: handle.description,
+                    quantity: 1
+                };
+
+                ajouterAuPanier(productToAdd);
+                
+            });
+            
             handlesContainer.appendChild(card);
         });
         if (window.attachModalListeners) window.attachModalListeners();
+    }
+
+    //fonction ajouter au panier
+    function ajouterAuPanier(product) {
+        let panier = JSON.parse(localStorage.getItem('monPanier')) || [];
+        const existingProductIndex = panier.findIndex(item => item.id === product.id);
+        if (existingProductIndex > -1) {
+            
+            panier[existingProductIndex].quantity += 1;
+        } else {
+
+            panier.push(product);
+        }
+
+        localStorage.setItem('monPanier', JSON.stringify(panier));
     }
 });

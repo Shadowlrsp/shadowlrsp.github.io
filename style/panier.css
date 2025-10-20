@@ -199,6 +199,23 @@ main {
     border-radius: 10px;
     box-sizing: border-box;
 }
+.produitinfo {
+    flex: 1;
+max-width: 400px;
+    
+}
+.produitinfo h2 {
+    white-space: nowrap;     
+    overflow: hidden;        
+    text-overflow: ellipsis;  
+}
+
+
+.produitinfo p {
+    white-space: normal;      
+    word-wrap: break-word;    
+    overflow-wrap: break-word;
+}
 
 .produit img {
     width: 150px;
