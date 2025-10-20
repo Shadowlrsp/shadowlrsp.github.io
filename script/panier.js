@@ -1,3 +1,5 @@
+var cart = [];
+
 document.addEventListener('DOMContentLoaded', () => {
 
     
@@ -89,3 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mettreAJourLeTotal();
 
 });
+
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (!savedCart) return;
+    
+    try {
+        cart = JSON.parse(savedCart);
+        console.log('Cart loaded:', cart);
+    } catch (e) {
+        console.error('Error loading cart:', e);
+        cart = [];
+    }
+}

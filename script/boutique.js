@@ -2,49 +2,11 @@
 Script utilise pour populer la boutique avec des produits dynamiquement.
 */
 
-/* Ancien code html exemple
+var cart = [];
 
-
-        <div class="products">
-            <h1> Des poignées à portée de main</h1>
-            <div class="door-handles">
-                <!-- Ajout dynamique des produits par javascript -->
-                <!-- Classe pour une card : doorhandle-card -->
-                 <div class="product-card">
-                    <div class="top-card">
-                        <img src="assets/boutique/poignees/poignee1.jpg" alt="Poignée de porte classique">
-                        <p class="description" style="display: none;">La poignee de vos reves</p>
-                        <button class="learn-more" id="learn-more">
-                            <span class="material-icons-outlined">
-                                info
-                            </span>
-                        </button>
-                    </div>
-                    <div class="bottom-card">
-                        <h2>Poignée Classique</h2>
-                        <!-- <p>Une poignée élégante et intemporelle pour toutes les portes.</p> -->
-                        <p class="price">29,99 €</p>
-                        <button class="add-to-cart">Ajouter au panier</button>
-                    </div>
-                 </div>
-            </div>
-
-            <h1> Des encadrements pour tous les goûts </h1>
-            <div class="door-frames">
-                <!-- Ajout dynamique des produits par javascript -->
-                <!-- Classe pour une card : doorframe-card -->
-            </div>
-
-            <h1> Des serrures pour votre sécurité </h1>
-            <div class="door-locks">
-                <!-- Ajout dynamique des produits par javascript -->
-                <!-- Classe pour une card : doorlock-card -->
-            </div>
-        </div>
-    </div>
-*/
 document.addEventListener('DOMContentLoaded', function() {
     // 'base de donnees' des poignées de porte
+    loadCart();
     const handles = [
         {
             title: 'Poignée Classique',
@@ -113,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.className = 'product-card';
             card.innerHTML = `
                 <div class="top-card">
-                    <img src="${handle.img}" alt="${handle.alt}">
+                    <img src="${handle.img}" alt="${handle.alt}" id="handle-img">
                     <button class="learn-more" data-index="${idx}">
                         <span class="material-icons-outlined">info</span>
                     </button>
@@ -126,6 +88,51 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             handlesContainer.appendChild(card);
         });
+
+        handlesContainer.addEventListener('click', (e) => {
+            const addToCartBtn = e.target.closest('.add-to-cart');
+            if (!addToCartBtn) return;
+
+            const card = addToCartBtn.closest('.product-card');
+            if (!card) return;
+
+            const productInfo = {
+                title: card.querySelector('h2')?.textContent,
+                price: card.querySelector('.price')?.textContent,
+                image: card.querySelector('img')?.src,
+                description: handles[card.querySelector('.learn-more')?.dataset?.index]?.description
+            };
+            cart.push(productInfo);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            console.log('Product added to cart:', productInfo);
+        });
+
+
         if (window.attachModalListeners) window.attachModalListeners();
     }
 });
+
+function GetElementInsideContainer(containerID, childID) {
+    var elm = document.getElementById(childID);
+    var parent = elm ? elm.parentNode : {};
+    return (parent.id && parent.id === containerID) ? elm : {};
+}
+
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (!savedCart) return;
+    
+    try {
+        cart = JSON.parse(savedCart);
+        console.log('Cart loaded:', cart);
+    } catch (e) {
+        console.error('Error loading cart:', e);
+        cart = [];
+    }
+}
+
+function clearCart() {
+    localStorage.removeItem('cart');
+    cart = [];
+    console.log('Cart cleared');
+}
