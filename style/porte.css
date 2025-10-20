@@ -7,7 +7,7 @@
     --bleu-clair: #3A7CA5;
     --accent: #81C3D7;
     --beige: #D9DCD6;
-    --halo: #81c3d7cc;
+    --halo: rgba(129, 195, 215, 0.8);
 }
 
 * {
@@ -24,7 +24,7 @@ body {
     color: var(--bleu-fonce);
     overflow-x: hidden;
     position: relative;
-    background: linear-gradient(60deg, var(--bleu-clair), var(--bleu-moyen), var(--bleu-fonce));
+    background: linear-gradient(120deg,var(--bleu-moyen), var(--beige));
     scroll-behavior: smooth;
 }
 
@@ -59,7 +59,7 @@ body {
     animation: fadeUp 1s ease;
 }
 .apropos-intro h1 {
-    color: var(--bleu-clair);
+    color: var(--beige);
     font-size: 2.8rem;
     border-bottom: 3px solid var(--accent);
     display: inline-block;
@@ -91,7 +91,7 @@ body {
    Section : Qui sommes-nous ?
    ============================= */
 .intro h2 {
-    color: var(--bleu-clair);
+    color: var(--beige);
     border-bottom: 2px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
@@ -158,7 +158,7 @@ body {
     margin: 100px auto;
 }
 .histoire h2 {
-    color: var(--bleu-clair);
+    color: var(--beige);
     border-bottom: 3px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
