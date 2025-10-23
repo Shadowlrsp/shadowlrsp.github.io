@@ -458,6 +458,138 @@ body.dark-mode .footer {
 */
 
 /* =============================
+   Section : Nos chiffres
+   ============================= */
+.chiffres {
+    background: rgba(58, 124, 165, 0.65);
+    color: var(--beige);
+    border-radius: 25px;
+    padding: 80px 10%;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(129,195,215,0.25);
+
+}
+
+.chiffres h2 {
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 45px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px rgba(129,195,215,0.5);
+}
+
+.chiffres-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.tuile {
+    background-color: rgba(47, 102, 144, 0.9);
+    border-radius: 20px;
+    padding: 35px 25px;
+    width: 230px;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 25px rgba(129,195,215,0.25);
+}
+
+.tuile:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.tuile .icon {
+    font-size: 60px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.tuile h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--beige);
+}
+
+.tuile p {
+    font-size: 1rem;
+    color: var(--beige);
+}
+
+/* =============================
+   Section : Notre équipe
+   ============================= */
+.equipe {
+    background: rgba(58, 124, 165, 0.7);
+    color: var(--beige);
+    border-radius: 25px;
+    padding: 80px 10%;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(129,195,215,0.25);
+    backdrop-filter: blur(20px) brightness(1.1);
+}
+
+.equipe h2 {
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 45px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px rgba(129,195,215,0.5);
+}
+
+.equipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.membre {
+    background-color: rgba(22, 66, 91, 0.85);
+    border-radius: 20px;
+    width: 250px;
+    padding: 30px;
+    box-shadow: 0 0 25px rgba(129,195,215,0.25);
+    transition: all 0.4s ease;
+}
+
+.membre:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 40px rgba(129,195,215,0.5);
+}
+
+.membre .avatar {
+    font-size: 80px;
+    color: var(--accent);
+    margin-bottom: 15px;
+    text-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.membre h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--beige);
+}
+
+.membre p {
+    font-size: 0.95rem;
+    color: var(--beige);
+}
+
+.membre .bio {
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+
+
+/* =============================
    Pied de page
    ============================= */
 .site-footer {
@@ -555,6 +687,29 @@ body.dark-mode .footer {
     .promo-text {
         font-size: 1rem;
     }
+    .chiffres {
+        padding: 60px 6%;
+    }
+
+    .chiffres-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .tuile {
+        width: 85%;
+        max-width: 320px;
+    }
+    .equipe-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .membre {
+        width: 85%;
+        max-width: 350px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -583,5 +738,35 @@ body.dark-mode .footer {
     }
     .promo-text {
         font-size: 0.95rem;
+    }
+    .chiffres {
+        padding: 45px 5%;
+        margin: 80px auto;
+    }
+
+    .tuile {
+        width: 90%;
+        padding: 25px 20px;
+    }
+
+    .tuile h3 {
+        font-size: 1.6rem;
+    }
+
+    .tuile .icon {
+        font-size: 50px;
+    }
+    .equipe {
+        padding: 60px 6%;
+    }
+    .membre {
+        width: 90%;
+        padding: 20px;
+    }
+    .membre h3 {
+        font-size: 1.2rem;
+    }
+    .membre .avatar {
+        font-size: 60px;
     }
 }
