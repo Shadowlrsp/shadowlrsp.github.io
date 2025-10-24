@@ -19,11 +19,12 @@ function triggerDoorAnimation() {
       doorContainer.style.display = 'none';
       mainContent.classList.add("visible");
       document.body.style.overflow = 'auto';
-    }, 1200);
+    }, 1500);
 
-  }, 1000);
+  }, 1200);
 }
 
 doorContainer.addEventListener("click", triggerDoorAnimation); //automatique
 
 setTimeout(triggerDoorAnimation, 100); //delay
+
