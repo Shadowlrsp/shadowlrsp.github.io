@@ -24,7 +24,7 @@ body {
     color: var(--bleu-fonce);
     overflow-x: hidden;
     position: relative;
-    background: linear-gradient(120deg,var(--accent), var(--beige));
+    background: var(--beige);
     scroll-behavior: smooth;
 }
 
@@ -61,16 +61,16 @@ body {
    ============================= */
 .apropos-intro {
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 20px;
     animation: fadeUp 1s ease;
 }
 .apropos-intro h1 {
-    color: var(--beige);
+    color: var(--bleu-moyen);
     font-size: 2.8rem;
-    border-bottom: 3px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
     display: inline-block;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
     position: relative;
     text-shadow: 0 0 30px rgba(129,195,215,0.6);
 }
@@ -89,8 +89,8 @@ body {
     max-width: 850px;
     margin: 0 auto 20px;
     text-align: justify;
-    font-size: 1.05rem;
-    color: var(--beige);
+    font-size: 1.30rem;
+    color: var(--bleu-clair);
 }
 
 /* Trait décoratif sous le titre avec un pseudo-élément :
@@ -103,7 +103,7 @@ body {
    Section : Qui sommes-nous ?
    ============================= */
 .intro h2 {
-    color: var(--beige);
+    color: var(--bleu-moyen);
     border-bottom: 2px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
@@ -113,7 +113,8 @@ body {
 .intro p {
     margin-bottom: 1.3em;
     text-align: justify;
-    color: var(--beige);
+    color: var(--bleu-clair);
+    font-size: 1.30rem;
 }
 
 /* =============================
@@ -123,7 +124,9 @@ body {
     background: rgba(58, 124, 165, 0.65);
     color: var(--beige);
     border-radius: 25px;
-    padding: 80px 10%;
+    padding: 50px 10%;
+    padding-left: 30px;
+    padding-right: 30px;
     margin: 100px auto;
     text-align: center;
     box-shadow: 0 0 30px rgba(129,195,215,0.25);
@@ -160,7 +163,7 @@ body {
     font-size: 70px;
     color: var(--accent);
     margin-bottom: 15px;
-    text-shadow: 0 0 25px rgba(129,195,215,0.8);
+    text-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
 
 /* Section avec effet glassmorphism :
@@ -176,7 +179,7 @@ body {
     margin: 100px auto;
 }
 .histoire h2 {
-    color: var(--beige);
+    color: var(--bleu-moyen);
     border-bottom: 3px solid var(--accent);
     display: inline-block;
     padding-bottom: 5px;
@@ -186,8 +189,8 @@ body {
 .histoire p {
     text-align: justify;
     margin-bottom: 1.3em;
-    font-size: 1.05rem;
-    color: var(--beige);
+    font-size: 1.30rem;
+    color: var(--bleu-clair);
 }
 .histoire img {
     display: block;
