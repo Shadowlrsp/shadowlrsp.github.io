@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //                 alt="Supprimer"></button>
             //     </div>
             // </article>
-               
+            //    nouvelle structure:
                 produitElement.innerHTML = `
                     <div class="centrage">
                         <div class="produitimg">
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
+// calcul du total:
     function mettreAJourLeTotal() {
         let sousTotal = 0;
         const tousLesProduits = document.querySelectorAll('.produit'); 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    
+    // les boutons
     produitPanierContainer.addEventListener('click', (event) => {
         const target = event.target;
 
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let quantitySpan = produitElement.querySelector('.qty');
         let quantite = parseInt(quantitySpan.textContent);
 
-        
+        // bouton plus
         if (target.classList.contains('increase') || target.closest('.increase')) {
             quantite++;
             quantitySpan.textContent = quantite;
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mettreAJourLeTotal(); 
         }
         
-        
+        // bouton moins
         if (target.classList.contains('decrease') || target.closest('.decrease')) {
             if (quantite > 1) {
                 quantite--;
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        
+        // bouton de suppression
         if (target.classList.contains('removebtn') || target.closest('.removebtn')) {
             supprimerDuStorage(productId); 
             produitElement.remove(); 

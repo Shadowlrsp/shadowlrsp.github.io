@@ -32,7 +32,8 @@
     <h1 class="titre_principal">Votre Panier</h1>
 
     <main>
-        <aside class="total-payment">
+
+        <div class="total-payment">
             <div class="détails_paiement">
                 <h2>Détails du paiement:</h2>
                 <p class="sous-total">Sous-total: 0.00 €</p>
@@ -59,19 +60,44 @@
                 </select>
                 <img src="assets/panier/carte.jpg" alt="Logos des méthodes de paiement" id="paymentimg">
             </div>
-
-        </aside>
+          </div>
 
         <section class="produit-panier">
             <div id="panier-vide-message">
-                Votre panier est actuellement vide.
+                Votre panier est actuellement vide.<br>
+                <u>vous pouvez ajouter des produits depuis la boutique.</u>
             </div>
 
         </section>
     </main>
 
-    <footer class="footer">
-        <p>© 2025 PorteShop — Tous droits réservés.</p>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4>PorteShop</h4>
+          <p>Le spécialiste de la porte depuis 1990. Qualité et design à votre service.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="propos.html">À propos</a></li>
+            <li><a href="">Devis</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: contact@porteshop.com</li>
+            <li>Téléphone: 01 23 45 67 89</li>
+            <li>Adresse: 123 Rue du Design, 75000 Paris</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PorteShop - Tous droits réservés.</p>
+      </div>
     </footer>
 
     <script src="script/panier.js"></script>
