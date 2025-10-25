@@ -102,6 +102,7 @@ main {
     height: 200px;
     border-radius: 10px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .produitimg {
@@ -142,9 +143,9 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
     gap: 10px;
     padding: 10px;
+    align-self: center; 
 }
 
 .produitprix {
@@ -153,8 +154,9 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 250px;
+    
     margin-left: auto;
+    align-self: center; 
 }
 
 .decrease,
@@ -366,13 +368,14 @@ main {
     }
 }
 
-/* ===========
-   Responsive 
-   ========== */
+/* =============
+   Responsive
+   =========== */
 
 /* === Tablettes et petits ordinateurs portables === */
 @media (max-width: 1024px) {
     main {
+        
         flex-direction: column;
         align-items: center;
         margin-top: 0;
@@ -386,7 +389,6 @@ main {
         width: 90%;
         margin: 20px 0;
         order: 1;
-        gap: 10px;
     }
 
     .total-payment {
@@ -398,9 +400,7 @@ main {
         order: 2;
     }
 
-    .centrage {
-        gap: 20px;
-    }
+   
 }
 
 /* === Mobiles === */
@@ -410,30 +410,34 @@ main {
     }
 
     .produit {
+        
         flex-direction: column;
         align-items: center;
-        height: 350px;
+        height: auto;
+        padding: 15px;
     }
 
     .centrage {
+       
         flex-direction: column;
         align-items: center;
         text-align: center;
+        align-self: auto;
     }
 
-    .imgproduit {
+    .produitimg {
         margin-right: 0;
         margin-bottom: 15px;
+        width: 100%;
+        height: auto;
+        text-align: center;
     }
-
-    .produit img {
-        width: 120px;
-        height: 120px;
+    .produitimg img{
+        height: 200px;
+        width: 300px;
+        border-radius: 10px;
     }
-
-    .produitinfo h1 {
-        font-size: 1.5em;
-    }
+    
 
     .produit p {
         font-size: 16px;
@@ -443,6 +447,7 @@ main {
         margin-left: 0;
         margin-top: 20px;
         width: 100%;
+        align-self: auto;
     }
 }
 
@@ -452,14 +457,6 @@ main {
         font-size: 1.8em;
     }
 
-    .produit {
-        height: 330px;
-    }
-
-    .produit img {
-        width: 100px;
-        height: 100px;
-    }
 
     .qty {
         font-size: 20px;
