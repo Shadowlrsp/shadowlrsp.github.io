@@ -2,75 +2,121 @@
 Script utilise pour populer la boutique avec des produits dynamiquement.
 */
 
+const doorhandles = [
+    {
+        title: 'Poignée Classique',
+        price: '29,99 €',
+        img: 'assets/boutique/poignees/poignee1.jpg',
+        alt: 'Poignée de porte classique',
+        description: 'Une poignée élégante et intemporelle pour toutes les portes.'
+    },
+    {
+        title: 'Poignée Moderne',
+        price: '34,99 €',
+        img: 'assets/boutique/poignees/poignee2.jpg',
+        alt: 'Poignée de porte moderne',
+        description: 'Design épuré pour un intérieur contemporain.'
+    },
+    {
+        title: 'Poignée Vintage',
+        price: '27,99 €',
+        img: 'assets/boutique/poignees/poignee3.jpg',
+        alt: 'Poignée de porte vintage',
+        description: 'Un charme rétro pour vos portes anciennes.'
+    },
+    {
+        title: 'Poignée Inox',
+        price: '31,99 €',
+        img: 'assets/boutique/poignees/poignee4.jpg',
+        alt: 'Poignée de porte inox',
+        description: 'Robuste et résistante à la corrosion.'
+    },
+    {
+        title: 'Poignée Noire',
+        price: '32,99 €',
+        img: 'assets/boutique/poignees/poignee5.jpg',
+        alt: 'Poignée de porte noire',
+        description: 'Pour une touche moderne et élégante.'
+    },
+    {
+        title: 'Poignée Dorée',
+        price: '39,99 €',
+        img: 'assets/boutique/poignees/poignee6.jpg',
+        alt: 'Poignée de porte dorée',
+        description: 'Finition dorée pour un effet luxueux.'
+    },
+    {
+        title: 'Poignée Carrée',
+        price: '28,99 €',
+        img: 'assets/boutique/poignees/poignee7.jpg',
+        alt: 'Poignée de porte carrée',
+        description: 'Forme géométrique pour un style unique.'
+    },
+    {
+        title: 'Poignée Ronde',
+        price: '26,99 €',
+        img: 'assets/boutique/poignees/poignee8.jpg',
+        alt: 'Poignée de porte ronde',
+        description: 'Simplicité et efficacité au quotidien.'
+    }
+];
+
+const doorframes = [
+    {
+        "title": "Cadre de porte en bois blanc",
+        "price": "79,99 €",
+        "img": "assets/boutique/cadres/frame1.jpg",
+        "alt": "Cadre de porte en bois blanc",
+        "description": "Un cadre robuste en bois massif avec une touche de modernité."
+    },
+    {
+        "title": "Cadre en bois avec fenetre assorti",
+        "price": "79,99 €",
+        "img": "assets/boutique/cadres/frame2.jpg",
+        "alt": "Cadre de porte en bois blanc",
+        "description": "Un cadre robuste en bois massif avec une touche de modernité."
+    },
+    {
+        "title": "Cadre de porte en bois blanc",
+        "price": "79,99 €",
+        "img": "assets/boutique/cadres/frame3.jpg",
+        "alt": "Cadre de porte en bois blanc",
+        "description": "Un cadre robuste en bois massif avec une touche de modernité."
+    },
+    {
+        "title": "Cadre de porte en bois blanc",
+        "price": "79,99 €",
+        "img": "assets/boutique/cadres/frame4.jpg",
+        "alt": "Cadre de porte en bois blanc",
+        "description": "Un cadre robuste en bois massif avec une touche de modernité."
+    },
+    {
+        "title": "Cadre de porte en bois blanc",
+        "price": "79,99 €",
+        "img": "assets/boutique/cadres/frame5.jpg",
+        "alt": "Cadre de porte en bois blanc",
+        "description": "Un cadre robuste en bois massif avec une touche de modernité."
+    },
+    {
+        "title": "Cadre de porte en bois blanc",
+        "price": "79,99 €",
+        "img": "assets/boutique/cadres/frame6.jpg",
+        "alt": "Cadre de porte en bois blanc",
+        "description": "Un cadre robuste en bois massif avec une touche de modernité."
+    }
+]
+
 var cart = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     // 'base de donnees' des poignées de porte
     loadCart();
-    const handles = [
-        {
-            title: 'Poignée Classique',
-            price: '29,99 €',
-            img: 'assets/boutique/poignees/poignee1.jpg',
-            alt: 'Poignée de porte classique',
-            description: 'Une poignée élégante et intemporelle pour toutes les portes.'
-        },
-        {
-            title: 'Poignée Moderne',
-            price: '34,99 €',
-            img: 'assets/boutique/poignees/poignee2.jpg',
-            alt: 'Poignée de porte moderne',
-            description: 'Design épuré pour un intérieur contemporain.'
-        },
-        {
-            title: 'Poignée Vintage',
-            price: '27,99 €',
-            img: 'assets/boutique/poignees/poignee3.jpg',
-            alt: 'Poignée de porte vintage',
-            description: 'Un charme rétro pour vos portes anciennes.'
-        },
-        {
-            title: 'Poignée Inox',
-            price: '31,99 €',
-            img: 'assets/boutique/poignees/poignee4.jpg',
-            alt: 'Poignée de porte inox',
-            description: 'Robuste et résistante à la corrosion.'
-        },
-        {
-            title: 'Poignée Noire',
-            price: '32,99 €',
-            img: 'assets/boutique/poignees/poignee5.jpg',
-            alt: 'Poignée de porte noire',
-            description: 'Pour une touche moderne et élégante.'
-        },
-        {
-            title: 'Poignée Dorée',
-            price: '39,99 €',
-            img: 'assets/boutique/poignees/poignee6.jpg',
-            alt: 'Poignée de porte dorée',
-            description: 'Finition dorée pour un effet luxueux.'
-        },
-        {
-            title: 'Poignée Carrée',
-            price: '28,99 €',
-            img: 'assets/boutique/poignees/poignee7.jpg',
-            alt: 'Poignée de porte carrée',
-            description: 'Forme géométrique pour un style unique.'
-        },
-        {
-            title: 'Poignée Ronde',
-            price: '26,99 €',
-            img: 'assets/boutique/poignees/poignee8.jpg',
-            alt: 'Poignée de porte ronde',
-            description: 'Simplicité et efficacité au quotidien.'
-        }
-    ];
 
     // Sélectionne le conteneur des poignées
     const handlesContainer = document.querySelector('.door-handles');
     if (handlesContainer) {
         handlesContainer.innerHTML = '';
-        handles.forEach(function(handle, idx) {
+        doorhandles.forEach(function(handle, idx) {
             const card = document.createElement('div');
             card.className = 'product-card';
             card.innerHTML = `
@@ -112,6 +158,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const card = addToCartBtn.closest('.product-card');
             if (!card) return;
+
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                popup.style.opacity = 1.0;
+                setTimeout(() => {
+                    popup.style.opacity = 0.0;
+                }, 2000);
+            }
 
             const productInfo = {
                 title: card.querySelector('h2')?.textContent,
@@ -168,3 +222,12 @@ function clearCart() {
     cart = [];
     console.log('Cart cleared');
 }
+
+// while(true) {
+//     const popup = document.querySelector('.popup');
+//     if(popup) {
+//         if(popup.style.opacity <= 0.01) {
+//             popup.style.display = 'none';
+//         }
+//     }
+// }
