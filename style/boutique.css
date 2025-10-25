@@ -56,15 +56,16 @@ body {
     font-size: x-large;
 }
 
+.door-frames,
 .door-handles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    max-width: 950px;
-    margin: 0 auto 32px auto;
+    display: flex;
+    gap: 16px;
+    max-width: 70%;
+    margin-left: 15%;
     justify-items: center;
     align-items: stretch;
-    width: 100%;
+    overflow-x: auto;
+    padding: 0 16px;
     box-sizing: border-box;
 }
 
@@ -93,9 +94,9 @@ body {
     width: 100%;
     max-width: 220px;
     aspect-ratio: 220/390;
-    min-width: 180px;
+    min-width: 220px;
     border: #3A7CA5;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     border-style: groove;
     margin-bottom: 0px;
     background: linear-gradient(to bottom, var(--background), rgb(216, 236, 245));
@@ -125,7 +126,7 @@ body {
     width: 148px;
     justify-self: center;
     margin-bottom: 1px;
-    border-radius: 5px 5px 0px 0px;
+    /* border-radius: 5px 5px 0px 0px; */
 }
 
 .product-card button {
