@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 :root {
@@ -14,6 +15,10 @@
     --secondary: #81c3d7;
     --neoncolor: #4ad2fc;
 }
+
+
+
+
 
 html {
     scroll-behavior: smooth;
@@ -105,6 +110,11 @@ main {
     overflow: hidden;
 }
 
+.produit:hover {
+    transform: scale(1.1);
+    box-shadow: 20px 15px 30px var(--main);
+}
+
 .produitimg {
     width: 200px;
     flex-shrink: 0;
@@ -145,7 +155,7 @@ main {
     flex-direction: row;
     gap: 10px;
     padding: 10px;
-    align-self: center; 
+    align-self: center;
 }
 
 .produitprix {
@@ -154,9 +164,9 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    
+
     margin-left: auto;
-    align-self: center; 
+    align-self: center;
 }
 
 .decrease,
@@ -215,6 +225,11 @@ main {
 
 }
 
+.total-payment:hover {
+    transform: scale(1.1);
+    box-shadow: 20px 15px 30px var(--main);
+}
+
 .total-payment h2 {
     font-weight: bold;
     color: var(--bold)
@@ -244,13 +259,17 @@ main {
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
+
     font-size: 20px;
+    box-shadow: 0px 15px #4f9b53;
+    margin-bottom: 30px
 }
 
 .paybtn:hover {
-    background-color: #45a049;
+    box-shadow: 0px 5px #4f9b53;
+    transform: translateY(10px);
+    cursor: pointer;
 }
 
 .selection-payment {
@@ -261,6 +280,13 @@ main {
     width: 90%;
     height: auto;
     mix-blend-mode: multiply;
+}
+
+select {
+    border: 1px solid var(--bold);
+    background-color: var(--secondary);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    border-radius: 10px;
 }
 
 /* =======
@@ -375,7 +401,7 @@ main {
 /* === Tablettes et petits ordinateurs portables === */
 @media (max-width: 1024px) {
     main {
-        
+
         flex-direction: column;
         align-items: center;
         margin-top: 0;
@@ -400,7 +426,7 @@ main {
         order: 2;
     }
 
-   
+
 }
 
 /* === Mobiles === */
@@ -410,7 +436,7 @@ main {
     }
 
     .produit {
-        
+
         flex-direction: column;
         align-items: center;
         height: auto;
@@ -418,7 +444,7 @@ main {
     }
 
     .centrage {
-       
+
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -432,12 +458,13 @@ main {
         height: auto;
         text-align: center;
     }
-    .produitimg img{
+
+    .produitimg img {
         height: 200px;
         width: 300px;
         border-radius: 10px;
     }
-    
+
 
     .produit p {
         font-size: 16px;
