@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PorteShop - Boutique</title>
 
-    <link rel="stylesheet" href="style/boutique.css">
     <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/boutique.css">
     <link rel="stylesheet" href="style/modal.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
@@ -20,6 +20,17 @@
         <!-- <div class="navbar-logo">
             <img src="assets/logo.jpg" width="32" height="32">
         </div> -->
+        <section class="Search-bar"> <img src="assets/logo.jpg" alt="" class="Search-bar-logo">
+        
+        <input type="text" id="search" placeholder="Rechercher des produits, catégories, ..." class="Search-input">
+
+        <ul>
+          <li><a href="">Devis</a></li>
+          <li><a href="">Favoris</a></li>
+          <li><a href="">Connexion</a></li>
+        </ul>
+
+      </section>
         <div class="navbar">
             <ul class="navbar-links">
                 <li> <a href="index.html">Accueil</a> </li>
@@ -99,11 +110,34 @@
         </div>
 
     </div>
-
-    <footer>
-        <div class="footer">
-            <p>© 2025 PorteShop — Tous droits réservés.</p>
+    
+     <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4>PorteShop</h4>
+          <p>Le spécialiste de la porte depuis 1990. Qualité et design à votre service.</p>
         </div>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="propos.html">A propos</a></li>
+            <li><a href="">Devis</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: contact@porteshop.com</li>
+            <li>Téléphone: 01 23 45 67 89</li>
+            <li>Adresse: 123 Rue du Design, 75000 Paris</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PorteShop - Tous droits réservés.</p>
+      </div>
     </footer>
 
     <script src="script/modal.js"></script>
