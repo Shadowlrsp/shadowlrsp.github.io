@@ -64,4 +64,53 @@ themeToggle.addEventListener("click", () => {
     themeToggle.textContent = "🌙";
   }
 });
+  /* === 4. DIAGRAMME CIRCULAIRE : COMPOSITION D’UNE PORTE === */
+  const canvas = document.getElementById("compositionChart");
+  if (canvas) {
+    // Charger Chart.js dynamiquement (si le script n'est pas déjà dans le HTML)
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+    script.onload = () => {
+      const ctx = canvas.getContext("2d");
+      new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["Bois recyclé", "Acier renforcé", "Verre trempé", "Isolant naturel"],
+          datasets: [{
+            data: [40, 25, 20, 15],
+            backgroundColor: [
+              "#8B5A2B",  // Bois
+              "#708090",  // Acier
+              "#3A7CA5",  // Verre
+              "#7CB342"   // Isolant
+            ],
+            borderColor: "#D9DCD6",
+            borderWidth: 2
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: "right",
+              labels: {
+                color: "#D9DCD6",
+                font: { size: 14 }
+              }
+            },
+            tooltip: {
+              backgroundColor: "rgba(22,66,91,0.9)",
+              titleFont: { size: 14 },
+              bodyFont: { size: 13 },
+              cornerRadius: 8
+            }
+          },
+          animation: {
+            animateScale: true,
+            animateRotate: true
+          }
+        }
+      });
+    };
+    document.head.appendChild(script);
+  }
 
