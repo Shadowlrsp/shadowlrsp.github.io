@@ -4,7 +4,7 @@ const mainContent = document.getElementById("mainContent");
 
 let isAnimating = false;
 
-doorContainer.addEventListener("click", () => {
+function triggerDoorAnimation() { 
   if (isAnimating) {
     return;
   }
@@ -13,14 +13,18 @@ doorContainer.addEventListener("click", () => {
   door.classList.add("open"); // anim d'ouverture
 
   setTimeout(() => {
-    doorContainer.classList.add("zooming"); // zoom après 1.5s
+    doorContainer.classList.add("zooming"); // zoom après 1s
 
     setTimeout(() => {
       doorContainer.style.display = 'none';
       mainContent.classList.add("visible");
       document.body.style.overflow = 'auto';
-      
-    }, 1200);
+    }, 1500);
 
-  }, 1000);
-});
+  }, 1200);
+}
+
+doorContainer.addEventListener("click", triggerDoorAnimation); //automatique
+
+setTimeout(triggerDoorAnimation, 100); //delay
+

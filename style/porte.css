@@ -24,7 +24,7 @@ body {
     color: var(--bleu-fonce);
     overflow-x: hidden;
     position: relative;
-    background: linear-gradient(120deg,var(--bleu-moyen), var(--beige));
+    background: linear-gradient(120deg,var(--accent), var(--beige));
     scroll-behavior: smooth;
 }
 
@@ -40,6 +40,12 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Animation fade-in au scroll : 
+   - opacity passe de 0 à 1
+   - translateY pour un effet de montée
+   - transition pour adoucir l'effet */
+
 
 /* =============================
    Contenu principal
@@ -86,6 +92,12 @@ body {
     font-size: 1.05rem;
     color: var(--beige);
 }
+
+/* Trait décoratif sous le titre avec un pseudo-élément :
+   - position absolute pour s'aligner sous le texte
+   - largeur > 100% pour dépasser légèrement
+   - gradient + box-shadow pour un effet lumineux */
+
 
 /* =============================
    Section : Qui sommes-nous ?
@@ -151,6 +163,12 @@ body {
     text-shadow: 0 0 25px rgba(129,195,215,0.8);
 }
 
+/* Section avec effet glassmorphism :
+   - background semi-transparent
+   - backdrop-filter blur + brightness pour flou et luminosité
+   - box-shadow pour profondeur */
+
+
 /* =============================
    Section : Histoire
    ============================= */
@@ -183,6 +201,10 @@ body {
     transform: scale(1.05);
     box-shadow: 0 0 50px rgba(129,195,215,0.6);
 }
+/* Images avec effet hover :
+   - scale pour agrandir légèrement
+   - box-shadow plus intense pour accentuer l'effet de survol
+   - transition sur transform et box-shadow pour fluidité */
 
 /* =============================
    Section : Contact
@@ -253,17 +275,65 @@ body {
 }
 
 /* =============================
-   Pied de page
+   Bouton : Retour en haut de la page
    ============================= */
-.footer {
-    background-color: var(--bleu-fonce);
+.back-to-top {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    background: linear-gradient(135deg, var(--accent), var(--bleu-moyen));
     color: var(--beige);
-    text-align: center;
-    padding: 30px;
-    margin-top: 100px;
-    font-size: 0.9rem;
-    box-shadow: 0 -6px 25px rgba(129,195,215,0.3);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 22px;
+    display: none; /* affiché dynamiquement par JS */
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.35s ease;
+    z-index: 1000;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, var(--bleu-clair), var(--accent));
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(129,195,215,0.5);
+}
+
+.back-to-top:active {
+    transform: scale(0.96);
+    box-shadow: 0 5px 15px rgba(129,195,215,0.3);
+}
+
+.back-to-top span {
+    font-size: 1.4rem;
+    animation: pulseArrow 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseArrow {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-4px); opacity: 0.8; }
+}
+
+.back-to-top.show {
+    display: flex;
+    animation: fadeInBtn 0.6s ease forwards;
+}
+
+@keyframes fadeInBtn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bouton "Retour en haut" :
+   - display: none par défaut, affiché via JS avec la classe 'show'
+   - animation fadeInBtn pour apparition fluide
+   - pulseArrow anime la flèche pour attirer l'attention */
 
 /* =============================
    Parallaxe titres
@@ -273,6 +343,321 @@ h1, h2 {
     will-change: transform;
 }
 
+/* Parallaxe titres :
+   - transition pour mouvement fluide
+   - will-change: transform pour améliorer la performance lors du déplacement */
+
+
+/* =============================
+   BOUTON MODE SOMBRE
+   ============================= */
+.theme-toggle {
+  position: fixed;
+  bottom: 100px; /* au-dessus du bouton retour en haut */
+  right: 35px;
+  background: var(--bleu-moyen);
+  color: var(--beige);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 25px rgba(129,195,215,0.4);
+  font-size: 1.2rem;
+  transition: all 0.35s ease-in-out;
+}
+.theme-toggle:hover {
+  background: var(--accent);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 45px rgba(129,195,215,0.6);
+}
+
+/* === MODE SOMBRE GLOBAL === */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode .apropos-intro h1,
+body.dark-mode .intro h2,
+body.dark-mode .valeurs h2,
+body.dark-mode .histoire h2,
+body.dark-mode .contact-form h2 {
+  color: #fff;
+}
+
+body.dark-mode .valeurs,
+body.dark-mode .contact-form {
+  background: rgba(58, 124, 165, 0.25);
+  backdrop-filter: blur(20px) brightness(0.8);
+}
+
+body.dark-mode .valeur {
+  background-color: rgba(22, 66, 91, 0.6);
+}
+
+body.dark-mode .send-btn {
+  background-color: #357ab8;
+  color: #fff;
+}
+
+body.dark-mode .footer {
+  background-color: #0d2a3a;
+  color: #ccc;
+}
+
+/* Bouton mode sombre :
+   - position fixe pour rester visible
+   - box-shadow et hover pour effet lumineux
+   - transition pour transformations "douces" */
+
+/* Mode sombre global :
+   - changements de background et color
+   - adaptation des sections et boutons pour contraste et lisibilité */
+
+
+/* =============================
+   Bandeau promotionnel défilant
+   ============================= */
+.promo-banner {
+    background: linear-gradient(90deg, var(--accent), var(--bleu-clair));
+    color: var(--beige);
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 40px auto;
+    padding: 15px 10%;
+    box-shadow: 0 0 25px rgba(129,195,215,0.4);
+}
+
+.promo-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%; /* départ hors de l'écran à droite */
+    animation: scrollText 15s linear infinite;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 
+   - Défilement texte en CSS avec animation : https://developer.mozilla.org/fr/docs/Web/CSS/@keyframes
+   - Propriétés utiles pour texte défilant : overflow, white-space, transform
+     https://developer.mozilla.org/fr/docs/Web/CSS/white-space
+     https://developer.mozilla.org/fr/docs/Web/CSS/overflow
+*/
+
+/* =============================
+   Section : Nos chiffres
+   ============================= */
+.chiffres {
+    background: rgba(58, 124, 165, 0.65);
+    color: var(--beige);
+    border-radius: 25px;
+    padding: 80px 10%;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(129,195,215,0.25);
+
+}
+
+.chiffres h2 {
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 45px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px rgba(129,195,215,0.5);
+}
+
+.chiffres-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.tuile {
+    background-color: rgba(47, 102, 144, 0.9);
+    border-radius: 20px;
+    padding: 35px 25px;
+    width: 230px;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 25px rgba(129,195,215,0.25);
+}
+
+.tuile:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.tuile .icon {
+    font-size: 60px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.tuile h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--beige);
+}
+
+.tuile p {
+    font-size: 1rem;
+    color: var(--beige);
+}
+
+/* =============================
+   Section : Notre équipe
+   ============================= */
+.equipe {
+    background: rgba(58, 124, 165, 0.7);
+    color: var(--beige);
+    border-radius: 25px;
+    padding: 80px 10%;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(129,195,215,0.25);
+    backdrop-filter: blur(20px) brightness(1.1);
+}
+
+.equipe h2 {
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 45px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px rgba(129,195,215,0.5);
+}
+
+.equipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.membre {
+    background-color: rgba(22, 66, 91, 0.85);
+    border-radius: 20px;
+    width: 250px;
+    padding: 30px;
+    box-shadow: 0 0 25px rgba(129,195,215,0.25);
+    transition: all 0.4s ease;
+}
+
+.membre:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 40px rgba(129,195,215,0.5);
+}
+
+.membre .avatar {
+    font-size: 80px;
+    color: var(--accent);
+    margin-bottom: 15px;
+    text-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.membre h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--beige);
+}
+
+.membre p {
+    font-size: 0.95rem;
+    color: var(--beige);
+}
+
+.membre .bio {
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+
+
+/* =============================
+   Pied de page
+   ============================= */
+.site-footer {
+    background-color: var(--bold); 
+    color: var(--background);
+    padding: 40px 0;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.footer-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h4 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.footer-column p, .footer-column li {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: var(--background);
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #fff; 
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+}
+
 /* =============================
    Responsive
    ============================= */
@@ -280,10 +665,108 @@ h1, h2 {
     .content { padding: 40px 6%; }
     .valeurs-container { flex-direction: column; align-items: center; }
     .valeur { width: 85%; }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    .back-to-top span {
+        font-size: 1.2rem;
+    }
+    .theme-toggle {
+        bottom: 70px; 
+        right: 20px;         
+        padding: 10px 14px;  
+        font-size: 1rem;     
+    }
+
+    .promo-banner {
+        padding: 12px 6%;
+    }
+    .promo-text {
+        font-size: 1rem;
+    }
+    .chiffres {
+        padding: 60px 6%;
+    }
+
+    .chiffres-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .tuile {
+        width: 85%;
+        max-width: 320px;
+    }
+    .equipe-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .membre {
+        width: 85%;
+        max-width: 350px;
+    }
 }
+
 @media screen and (max-width: 600px) {
     body { font-size: 0.95rem; }
     .apropos-intro h1 { font-size: 1.8rem; }
     .valeur { width: 90%; padding: 25px; }
     .send-btn { width: 100%; justify-content: center; }
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    .back-to-top span {
+        font-size: 1.2rem;
+    }
+    .theme-toggle {
+        bottom: 70px; 
+        right: 20px;         
+        padding: 10px 14px;  
+        font-size: 1rem;     
+    }
+
+    .promo-banner {
+        padding: 10px 4%;
+    }
+    .promo-text {
+        font-size: 0.95rem;
+    }
+    .chiffres {
+        padding: 45px 5%;
+        margin: 80px auto;
+    }
+
+    .tuile {
+        width: 90%;
+        padding: 25px 20px;
+    }
+
+    .tuile h3 {
+        font-size: 1.6rem;
+    }
+
+    .tuile .icon {
+        font-size: 50px;
+    }
+    .equipe {
+        padding: 60px 6%;
+    }
+    .membre {
+        width: 90%;
+        padding: 20px;
+    }
+    .membre h3 {
+        font-size: 1.2rem;
+    }
+    .membre .avatar {
+        font-size: 60px;
+    }
 }

@@ -37,3 +37,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fadeElements.forEach((el) => observer.observe(el));
 });
+  /* === 3. BOUTON "RETOURNER EN HAUT DE LA PAGE" === */
+  const topBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 350) {
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
+    }
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  /* === MODE SOMBRE / CLAIR === */
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  
+  
+  if (document.body.classList.contains("dark-mode")) {
+    themeToggle.textContent = "☀️";
+  } else {
+    themeToggle.textContent = "🌙";
+  }
+});
+

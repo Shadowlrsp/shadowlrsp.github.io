@@ -73,10 +73,25 @@
         </section>
 
         <!-- =============================
+             Bandeau promotionnel défilant
+             ============================= -->
+        <section class="promo-banner">
+            <div class="promo-text">
+            🎉 Profitez de <strong>-10%</strong> sur tout le site avec le code <strong>PorteShop10</strong> ! Offre limitée, ne la manquez pas ! 🎉
+            </div>
+        </section>
+
+
+
+        <!-- =============================
              Section : Présentation
              ============================= -->
         <section class="intro">
-            <h2><span class="material-symbols-outlined">info</span> Qui sommes-nous ?</h2>
+            <h2>
+            <a href="https://bbittige-iut90.github.io/ProjetDevWeb/panier.html" class="material-symbols-outlined" style="text-decoration: none; color: inherit;">
+            info</a> Qui sommes-nous ?
+            </h2>
+
             <p>
                 Chez <strong>PorteShop</strong>, nous croyons que la porte n’est pas qu’un simple passage : 
                 c’est le premier contact avec votre intérieur, un symbole d’accueil, d’intimité et de style.  
@@ -123,7 +138,7 @@
         <section class="histoire">
             <h2><span class="material-symbols-outlined">history</span> Notre histoire</h2>
             <p>
-                L’aventure <strong>PorteShop</strong> débute en 2025, dans un petit atelier belfortain où quatres étudiants en BUT informatique et 
+                L’aventure <strong>PorteShop</strong> débute en 1990, dans un petit atelier belfortain où quatres étudiants en informatique 
                 imaginent une nouvelle manière d’acheter ses portes. Frustrés par le manque de transparence et de personnalisation dans les magasins traditionnels,
                 ils décident de créer une boutique en ligne à la fois élégante, simple et accessible à tous.
             </p>
@@ -137,6 +152,36 @@
             </p>
             <img src="assets/propos/workshop.jpg" alt="Atelier de conception de portes">
         </section>
+
+        <!-- =============================
+             Section : Nos chiffres
+             ============================= -->
+        <section class="chiffres">
+            <h2><span class="material-symbols-outlined">bar_chart</span> Nos chiffres</h2>
+            <div class="chiffres-container">
+                <div class="tuile">
+                    <span class="material-symbols-outlined icon">store</span>
+                    <h3>+5000</h3>
+                    <p>portes vendues chaque année</p>
+                </div>
+                <div class="tuile">
+                    <span class="material-symbols-outlined icon">groups</span>
+                    <h3>98%</h3>
+                    <p>de clients satisfaits</p>
+                </div>
+                <div class="tuile">
+                    <span class="material-symbols-outlined icon">public</span>
+                    <h3>15</h3>
+                    <p>pays livrés dans toute l’Europe</p>
+                </div>
+                <div class="tuile">
+                    <span class="material-symbols-outlined icon">calendar_month</span>
+                    <h3>35 ans</h3>
+                    <p>d’expérience et d’innovation</p>
+                </div>
+            </div>
+        </section>
+
 
         <!-- =============================
              Section : Formulaire de contact
@@ -171,13 +216,85 @@
                 </button>
             </form>
         </section>
-    </main>
+                    </form>
+        </section>
 
-    <!-- =============================
-         Pied de page
-         ============================= -->
-    <footer class="footer">
-        <p>© 2025 PorteShop — Tous droits réservés.</p>
+        <!-- =============================
+             Section : Notre équipe
+             ============================= -->
+        <section class="equipe">
+            <h2><span class="material-symbols-outlined">groups</span> Notre équipe</h2>
+            <div class="equipe-container">
+
+                <div class="membre">
+                    <span class="material-symbols-outlined avatar">person</span>
+                    <h3>Mathis Gossiaux--Chopard-Guillaumot</h3>
+                    <p>Créateur de la page d'Accueil</p>
+                    <p class="bio">Créateur de la page d’accueil, passionné de design, de code et de porte.</p>
+                </div>
+
+                <div class="membre">
+                    <span class="material-symbols-outlined avatar">person</span>
+                    <h3>Leo Krakovinsky</h3>
+                    <p>Créateur de la page boutique</p>
+                    <p class="bio">Concepteur de la page boutique, alliant clarté, esthétisme et ergonomie pour PorteShop.</p>
+                </div>
+
+                <div class="membre">
+                    <span class="material-symbols-outlined avatar">person</span>
+                    <h3>Brian Lecoq</h3>
+                    <p>Créateur de la page A propos</p>
+                    <p class="bio">Créateur de la page À propos, dédié à la mise en valeur de l’identité de PorteShop.</p>
+                </div>
+
+                <div class="membre">
+                    <span class="material-symbols-outlined avatar">person</span>
+                    <h3>Landry Lecrosnier</h3>
+                    <p>Créateur de la page panier</p>
+                    <p class="bio">Créateur de la page panier, axé sur la simplicité et l’efficacité de l’achat des portes.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+
+
+        <!-- Bouton Retour en haut -->
+        <button id="backToTop" class="back-to-top">
+            <span class="material-symbols-outlined">arrow_upward</span>
+            Retourner en haut de la page
+        </button>
+
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4>PorteShop</h4>
+          <p>Le spécialiste de la porte depuis 1990. Qualité et design à votre service.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="propos.html">A propos</a></li>
+            <li><a href="">Devis</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: contact@porteshop.com</li>
+            <li>Téléphone: 01 23 45 67 89</li>
+            <li>Adresse: 123 Rue du Design, 75000 Paris</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PorteShop - Tous droits réservés.</p>
+      </div>
     </footer>
     <script src="script/porte.js"></script>
 </body>

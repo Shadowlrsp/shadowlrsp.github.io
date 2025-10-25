@@ -180,7 +180,6 @@ main {
     font-size: 1.5em;
     color: var(--bold);
     width: 95%;
-    border: 2px dashed white;
 }
 
 /* ================
@@ -198,6 +197,23 @@ main {
     height: fit-content;
     border-radius: 10px;
     box-sizing: border-box;
+}
+.produitinfo {
+    flex: 1;
+max-width: 400px;
+    
+}
+.produitinfo h2 {
+    white-space: nowrap;     
+    overflow: hidden;        
+    text-overflow: ellipsis;  
+}
+
+
+.produitinfo p {
+    white-space: normal;      
+    word-wrap: break-word;    
+    overflow-wrap: break-word;
 }
 
 .produit img {
