@@ -101,7 +101,7 @@ main {
     display: flex;
     flex-direction: row;
     box-shadow: 0px 2px 10px var(--main);
-    background: var(--background);
+    background: #81c3d756;
     padding-right: 10px;
     margin: 10px;
     height: 200px;
@@ -289,6 +289,50 @@ select {
     border-radius: 10px;
 }
 
+/* ==========
+   Suggestion
+   ==========*/
+
+suggestion {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+suggestion h1 {
+    margin: auto;
+    animation: neon 5s infinite;
+    color: white;
+}
+
+.carrousel {
+    margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    width: 100%;
+    background: local;
+    margin-top: 30px;
+
+}
+
+.cartecarrousel {
+    width: 250px;
+    height: 200px;
+    background-color: var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* =======
    Footer
    =======*/
@@ -360,6 +404,7 @@ select {
     font-size: 0.9em;
 }
 
+
 /* ==========
    Animations
    ==========*/
@@ -426,7 +471,13 @@ select {
         order: 2;
     }
 
+    .produit:hover {
+        transform: scale(1);
+    }
 
+    .total-payment:hover {
+        transform: scale(1);
+    }
 }
 
 /* === Mobiles === */
@@ -470,11 +521,23 @@ select {
         font-size: 16px;
     }
 
+    .produit-panier {
+        gap: 20px
+    }
+
+    .produit:hover {
+        transform: scale(1);
+    }
+
     .produitprix {
         margin-left: 0;
         margin-top: 20px;
         width: 100%;
         align-self: auto;
+    }
+
+    .total-payment:hover {
+        transform: scale(1);
     }
 }
 
@@ -484,6 +547,13 @@ select {
         font-size: 1.8em;
     }
 
+    .produit-panier {
+        gap: 20px
+    }
+
+    .produit:hover {
+        transform: scale(1);
+    }
 
     .qty {
         font-size: 20px;
@@ -491,5 +561,9 @@ select {
 
     .paybtn {
         font-size: 18px;
+    }
+
+    .total-payment:hover {
+        transform: scale(1);
     }
 }
