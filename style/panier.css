@@ -12,7 +12,7 @@
     --background: #D9DCD6;
     --bold: #16425B;
     --secondary: #81c3d7;
-    --neoncolor: #afecff;
+    --neoncolor: #4ad2fc;
 }
 
 html {
@@ -24,7 +24,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(290deg, #3a7ca5f6, #2f66905b, #16425bc0, #81c3d75b);
+    background: linear-gradient(290deg, var(--background), #81c3d78c, #3a7ca5e0);
     background-size: 400% 400%;
     animation: linearGradient 15s ease infinite;
     display: flex;
@@ -41,7 +41,7 @@ main {
     margin-top: 2%;
     flex-grow: 1;
     flex-direction: row-reverse;
-   
+
 }
 
 .titre_principal {
@@ -65,14 +65,14 @@ main {
     height: fit-content;
     margin-left: 5%;
     margin-right: 5%;
-    border: 2px solid var(--bold);
     padding: 5px;
     gap: 2%;
-    box-shadow: 0px 5px 20px var(--main);
+    box-shadow: 0px 10px 20px var(--main);
     border-radius: 10px;
     background: white;
-    
-    
+    border: 2px solid var(--accent);
+
+
 }
 
 #panier-vide-message {
@@ -84,29 +84,37 @@ main {
     width: 95%;
 }
 
+.link {
+    text-decoration: none;
+    color: blue;
+}
+
 /* ===========
    produits
    ===========*/
 .produit {
     display: flex;
     flex-direction: row;
-    border-top: 2px solid var(--bold);
-    border-left: 2px solid var(--bold);
+    box-shadow: 0px 2px 10px var(--main);
     background: var(--background);
-    padding: 2%;
+    padding-right: 10px;
     margin: 10px;
-    height: fit-content;
+    height: 200px;
     border-radius: 10px;
     box-sizing: border-box;
 }
 
-.imgproduit {
+.produitimg {
+    width: 200px;
+    flex-shrink: 0;
     margin-right: 20px;
 }
 
 .produit img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
 }
 
 .produitinfo {
@@ -135,18 +143,18 @@ main {
     justify-content: center;
     flex-direction: row;
     width: 100%;
-    gap: 100px;
+    gap: 10px;
+    padding: 10px;
 }
 
 .produitprix {
-    text-align: center;
-    margin-left: auto;
-    width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 250px;
+    margin-left: auto;
 }
 
 .decrease,
@@ -180,8 +188,8 @@ main {
 }
 
 .removebtnimg {
-    width: 20px !important;
-    height: 20px !important;
+    width: 20px;
+    height: 20px;
     filter: brightness(0%);
 }
 
@@ -189,8 +197,6 @@ main {
    Paiement 
    ================*/
 .total-payment {
-    border-top: 2px solid var(--bold);
-    border-left: 2px solid var(--bold);
     background: white;
     padding: 2%;
     display: flex;
@@ -204,7 +210,7 @@ main {
     z-index: 0;
     box-shadow: 0px 5px 20px var(--main);
     border-radius: 18px;
-  
+
 }
 
 .total-payment h2 {
