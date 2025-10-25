@@ -1,6 +1,10 @@
+/* ===========================
+   Styles Globaux & Variables
+   =========================== */
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 :root {
@@ -9,8 +13,12 @@
     --background: #D9DCD6;
     --bold: #16425B;
     --secondary: #81c3d7;
-    --neoncolor: #afecff;
+    --neoncolor: #4ad2fc;
 }
+
+
+
+
 
 html {
     scroll-behavior: smooth;
@@ -21,14 +29,440 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(290deg, #3a7ca5f6, #2f66905b, #16425bc0, #81c3d75b);
+    background: linear-gradient(290deg, var(--background), #81c3d78c, #3a7ca5e0);
     background-size: 400% 400%;
     animation: linearGradient 15s ease infinite;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
+/* ===========================
+   Mise en page principale
+   =========================== */
+main {
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+    flex-grow: 1;
+    flex-direction: row-reverse;
+
+}
+
+.titre_principal {
+    text-align: center;
+    color: white;
+    margin-bottom: 2%;
+    font-size: 3em;
+    animation: neon 5s infinite;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ========
+   panier
+   ======== */
+.produit-panier {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    width: 67%;
+    height: fit-content;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 5px;
+    gap: 2%;
+    box-shadow: 0px 10px 20px var(--main);
+    border-radius: 10px;
+    background: white;
+    border: 2px solid var(--accent);
+
+
+}
+
+#panier-vide-message {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--bold);
+    width: 95%;
+}
+
+.link {
+    text-decoration: none;
+    color: blue;
+}
+
+/* ===========
+   produits
+   ===========*/
+.produit {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 2px 10px var(--main);
+    background: #81c3d756;
+    padding-right: 10px;
+    margin: 10px;
+    height: 200px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.produit:hover {
+    transform: scale(1.1);
+    box-shadow: 20px 15px 30px var(--main);
+}
+
+.produitimg {
+    width: 200px;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.produit img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.produitinfo {
+    flex: 1;
+    max-width: 400px;
+}
+
+.produitinfo h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.produitinfo p {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.produit p {
+    font-size: 20px;
+}
+
+.centrage {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    align-self: center;
+}
+
+.produitprix {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-left: auto;
+    align-self: center;
+}
+
+.decrease,
+.increase {
+    padding: 2px 5px;
+    border: none;
+    background-color: var(--main);
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.qty {
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+.removebtn {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.removebtnimg {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0%);
+}
+
+/* ================
+   Paiement 
+   ================*/
+.total-payment {
+    background: white;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: fit-content;
+    width: 15%;
+    position: sticky;
+    top: 10px;
+    z-index: 0;
+    box-shadow: 0px 5px 20px var(--main);
+    border-radius: 18px;
+
+}
+
+.total-payment:hover {
+    transform: scale(1.1);
+    box-shadow: 20px 15px 30px var(--main);
+}
+
+.total-payment h2 {
+    font-weight: bold;
+    color: var(--bold)
+}
+
+.livraison {
+    margin-top: 2%;
+    font-size: 1em;
+}
+
+.total {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--bold);
+}
+
+#livraisonmethod,
+#payment {
+    padding: 5px;
+    width: 90%;
+    font-size: 15px;
+}
+
+.paybtn {
+    margin-top: 10%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    font-size: 20px;
+    box-shadow: 0px 15px #4f9b53;
+    margin-bottom: 30px
+}
+
+.paybtn:active {
+    box-shadow: 0px 5px #4f9b53;
+    transform: translateY(10px);
+    cursor: pointer;
+}
+
+.selection-payment {
+    margin-top: 5%;
+}
+
+#paymentimg {
+    width: 90%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+select {
+    border: 1px solid var(--bold);
+    background-color: var(--secondary);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    border-radius: 10px;
+}
+
+/* ==========
+   Suggestion
+   ==========*/
+
+suggestion {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+}
+
+suggestion h1 {
+    margin: auto;
+    animation: neon 5s infinite;
+    color: white;
+}
+/* carrousel */
+
+.conteneurCarrousel{
+    margin-top: 30px;
+    width: 60%;
+    justify-content: center;
+    box-shadow: 5px 15px 25px var(--main);
+    border-radius: 10px;
+    background: local;
+    overflow: hidden;
+}
+.carrousel {
+    margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    width: 100%;
+    background: local;
+    margin-top: 5px;
+    visibility: hidden;
+    
+    
+    
+
+}
+.carrousel:hover .cartecarrousel{
+    height: 200px;
+    box-shadow: 10px 5px 10px var(--main);
+    transform: scale(1);
+    background: var(--secondary);
+    padding-bottom: 5px;
+}
+.carrousel:hover .add-to-cart{
+    height: 40px;
+    width: 150px;
+    background: rgba(53, 53, 248, 0.404);
+    border-radius: 10px;
+}
+.carrousel:hover .imgcarrousel{
+    height: 50%;}
+
+.carrousel .add-to-cart{
+    height: 20px;
+    width: 150px;
+    background: rgba(101, 101, 253, 0.699);
+    border-radius: 10px;
+}
+.carrousel:hover .bottom-card{
+     height: 50%;
+}
+
+.cartecarrousel {
+    width: 250px;
+    height: 130px;
+    background-color: var(--accent);
+    display: flex;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    padding-bottom:0px;
+}
+.imgcarrousel{
+    width: 100%;
+    height: 100%;
+}
+.bottom-card{
+    height: 0px;
+    
+}
+
+
+
+/* =======
+   Footer
+   =======*/
+.site-footer {
+    background-color: var(--bold);
+    color: var(--background);
+    padding: 40px 0;
+    margin-top: 60px;
+    width: 100%;
+    position: relative;
+}
+
+.footer-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h4 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.footer-column p,
+.footer-column li {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: var(--background);
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+}
+
+
+/* ==========
+   Animations
+   ==========*/
 @keyframes linearGradient {
     0% {
         background-position: 0% 50%;
@@ -41,25 +475,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-main {
-    width: 100%;
-    display: flex;
-    margin-top: 2%;
-    flex-grow: 1;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.titre_principal {
-    text-align: center;
-    color: white;
-    margin-bottom: 2%;
-    font-size: 3em;
-    animation: neon 5s infinite;
-    width: 100%;
-    margin-top: 20px;
 }
 
 @keyframes neon {
@@ -79,229 +494,14 @@ main {
     }
 }
 
-/* ====================
-        Paiement
-   ================== */
-.total-payment {
-    border-top: 2px solid var(--bold);
-    border-left: 2px solid var(--bold);
-    background: white;
-    padding: 2%;
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: fit-content;
-    width: 15%;
-    position: fixed;
-    top: 26%;
-    left: 75%;
-    z-index: 0;
-    box-shadow: 0px 5px 20px var(--main);
-    border-radius: 18px;
-}
-
-.total-payment h2 {
-    font-weight: bold;
-    color: var(--bold)
-}
-
-
-.livraison {
-    margin-top: 2%;
-    font-size: 1em;
-}
-
-#livraisonmethod,
-#payment {
-    padding: 5px;
-    width: 90%;
-    font-size: 15px;
-}
-
-
-.total {
-
-    font-size: 1.3em;
-    font-weight: bold;
-    color: var(--bold);
-}
-
-.paybtn {
-    margin-top: 10%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.paybtn:hover {
-    background-color: #45a049;
-}
-
-.selection-payment {
-    margin-top: 5%;
-}
-
-#paymentimg {
-    width: 90%;
-    height: auto;
-    mix-blend-mode: multiply;
-}
-
-
-/* ================
-        Panier
-   ================ */
-.produit-panier {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 67%;
-    height: fit-content;
-    margin-left: 5%;
-    margin-right: 5%;
-    border: 2px solid var(--bold);
-    padding: 5px;
-    gap: 2%;
-    box-shadow: 0px 5px 20px var(--main);
-    border-radius: 10px;
-    background: white;
-    margin-top: 50px;
-}
-
-#panier-vide-message {
-    display: none;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.5em;
-    color: var(--bold);
-    width: 95%;
-}
-
-/* ================
-        Produit
-   ================*/
-
-.produit {
-    display: flex;
-    flex-direction: row;
-    border-top: 2px solid var(--bold);
-    border-left: 2px solid var(--bold);
-    background: var(--background);
-    padding: 2%;
-    margin: 10px;
-    height: fit-content;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-.produitinfo {
-    flex: 1;
-max-width: 400px;
-    
-}
-.produitinfo h2 {
-    white-space: nowrap;     
-    overflow: hidden;        
-    text-overflow: ellipsis;  
-}
-
-
-.produitinfo p {
-    white-space: normal;      
-    word-wrap: break-word;    
-    overflow-wrap: break-word;
-}
-
-.produit img {
-    width: 150px;
-    height: 150px;
-}
-
-.produit p {
-    font-size: 20px;
-}
-
-.imgproduit {
-    margin-right: 20px;
-}
-
-.centrage {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    gap: 100px;
-}
-
-.produitprix {
-    text-align: center;
-    margin-left: auto;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-
-.removebtn {
-    height: 30px;
-    width: 30px;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: var(--accent);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.removebtnimg {
-    width: 20px !important;
-    height: 20px !important;
-    filter: brightness(0%);
-}
-
-.decrease,
-.increase {
-    padding: 2px 5px;
-    border: none;
-    background-color: var(--main);
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 10px;
-    color: white;
-}
-
-.qty {
-    margin: 0 10px;
-    font-size: 25px;
-}
-
-
-/* ===========================
-   Footer
-   =========================== */
-footer {
-    background-color: var(--bold);
-    color: var(--background);
-    text-align: center;
-    padding: 30px;
-    margin-top: 100px;
-    font-size: 0.9rem;
-    box-shadow: 0 -6px 25px rgba(129, 195, 215, 0.3);
-}
+/* =============
+   Responsive
+   =========== */
 
 /* === Tablettes et petits ordinateurs portables === */
 @media (max-width: 1024px) {
     main {
+
         flex-direction: column;
         align-items: center;
         margin-top: 0;
@@ -311,15 +511,11 @@ footer {
         margin-top: 20px;
     }
 
-
     .produit-panier {
         width: 90%;
         margin: 20px 0;
         order: 1;
-        gap: 10px;
     }
-
-
 
     .total-payment {
         position: relative;
@@ -330,9 +526,15 @@ footer {
         order: 2;
     }
 
-    .centrage {
-        gap: 20px;
+    .produit:hover {
+        transform: scale(1);
+    }
 
+    .total-payment:hover {
+        transform: scale(1);
+    }
+    .conteneurCarrousel{
+        width: 80%;
     }
 }
 
@@ -342,43 +544,61 @@ footer {
         font-size: 2.2em;
     }
 
-
     .produit {
+
         flex-direction: column;
         align-items: center;
-        height: 350px;
+        height: auto;
+        padding: 15px;
     }
 
-
-
     .centrage {
+
         flex-direction: column;
         align-items: center;
         text-align: center;
+        align-self: auto;
     }
 
-    .imgproduit {
+    .produitimg {
         margin-right: 0;
         margin-bottom: 15px;
+        width: 100%;
+        height: auto;
+        text-align: center;
     }
 
-    .produit img {
-        width: 120px;
-        height: 120px;
+    .produitimg img {
+        height: 200px;
+        width: 300px;
+        border-radius: 10px;
     }
 
-    .produitinfo h1 {
-        font-size: 1.5em;
-    }
 
     .produit p {
         font-size: 16px;
+    }
+
+    .produit-panier {
+        gap: 20px
+    }
+
+    .produit:hover {
+        transform: scale(1);
     }
 
     .produitprix {
         margin-left: 0;
         margin-top: 20px;
         width: 100%;
+        align-self: auto;
+    }
+
+    .total-payment:hover {
+        transform: scale(1);
+    }
+    .conteneurCarrousel{
+        width: 90%;
     }
 }
 
@@ -388,14 +608,12 @@ footer {
         font-size: 1.8em;
     }
 
-
-    .produit {
-        height: 330px;
+    .produit-panier {
+        gap: 20px
     }
 
-    .produit img {
-        width: 100px;
-        height: 100px;
+    .produit:hover {
+        transform: scale(1);
     }
 
     .qty {
@@ -404,5 +622,12 @@ footer {
 
     .paybtn {
         font-size: 18px;
+    }
+
+    .total-payment:hover {
+        transform: scale(1);
+    }
+    .conteneurCarrousel{
+        width: 95%;
     }
 }
