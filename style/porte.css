@@ -124,10 +124,9 @@ body {
     background: rgba(58, 124, 165, 0.65);
     color: var(--beige);
     border-radius: 25px;
-    padding: 50px 10%;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin: 100px auto;
+    padding: 30px 6%;
+    max-width: 1300px;
+    margin: 80px auto;
     text-align: center;
     box-shadow: 0 0 30px rgba(129,195,215,0.25);
     backdrop-filter: blur(20px) brightness(1.2);
@@ -467,7 +466,8 @@ body.dark-mode .footer {
     background: rgba(58, 124, 165, 0.65);
     color: var(--beige);
     border-radius: 25px;
-    padding: 80px 10%;
+    padding: 50px 6%;
+    max-width: 1300px;
     margin: 100px auto;
     text-align: center;
     box-shadow: 0 0 30px rgba(129,195,215,0.25);
@@ -660,6 +660,76 @@ body.dark-mode .footer {
 .footer-bottom p {
     font-size: 0.9em;
 }
+/* =============================
+   Section : Composition d’une porte
+   ============================= */
+.composition {
+    background: rgba(47, 102, 144, 0.75);
+    color: var(--beige);
+    border-radius: 25px;
+    padding: 70px 6%;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(129,195,215,0.25);
+    backdrop-filter: blur(20px) brightness(1.1);
+    max-width: 1100px;
+}
+
+
+.composition h2 {
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px rgba(129,195,215,0.5);
+}
+
+.composition p {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: justify;
+    color: var(--beige);
+}
+
+.composition-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+#compositionChart {
+    background: rgba(22, 66, 91, 0.6);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 25px rgba(129,195,215,0.25);
+    width: 450px !important;
+    height: 450px !important;
+}
+
+.composition-texte {
+    max-width: 420px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.composition-texte h3 {
+    color: var(--beige);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Effet au survol */
+.composition:hover {
+    box-shadow: 0 0 45px rgba(129,195,215,0.5);
+    transition: all 0.4s ease;
+}
+
 
 /* =============================
    Responsive
@@ -712,6 +782,21 @@ body.dark-mode .footer {
     .membre {
         width: 85%;
         max-width: 350px;
+    }
+
+    .composition-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .composition-texte {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    #compositionChart {
+        width: 90% !important;
+        height: auto !important;
     }
 }
 
@@ -771,5 +856,19 @@ body.dark-mode .footer {
     }
     .membre .avatar {
         font-size: 60px;
+    }
+    .composition-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .composition-texte {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    #compositionChart {
+        width: 90% !important;
+        height: auto !important;
     }
 }
