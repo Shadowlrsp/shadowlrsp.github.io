@@ -266,7 +266,7 @@ main {
     margin-bottom: 30px
 }
 
-.paybtn:hover {
+.paybtn:active {
     box-shadow: 0px 5px #4f9b53;
     transform: translateY(10px);
     cursor: pointer;
@@ -298,6 +298,7 @@ suggestion {
     display: flex;
     flex-direction: column;
     width: 100%;
+    align-items: center;
 
 }
 
@@ -306,31 +307,85 @@ suggestion h1 {
     animation: neon 5s infinite;
     color: white;
 }
+/* carrousel */
 
+.conteneurCarrousel{
+    margin-top: 30px;
+    width: 60%;
+    justify-content: center;
+    box-shadow: 5px 15px 25px var(--main);
+    border-radius: 10px;
+    background: local;
+    overflow: hidden;
+}
 .carrousel {
     margin: auto;
     display: grid;
     grid-auto-flow: column;
     scroll-behavior: auto;
-    gap: 1.2rem;
-    overflow-y: auto;
+    gap: 1rem;
+    overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     width: 100%;
     background: local;
-    margin-top: 30px;
+    margin-top: 5px;
+    visibility: hidden;
+    
+    
+    
 
+}
+.carrousel:hover .cartecarrousel{
+    height: 200px;
+    box-shadow: 10px 5px 10px var(--main);
+    transform: scale(1);
+    background: var(--secondary);
+    padding-bottom: 5px;
+}
+.carrousel:hover .add-to-cart{
+    height: 40px;
+    width: 150px;
+    background: rgba(53, 53, 248, 0.404);
+    border-radius: 10px;
+}
+.carrousel:hover .imgcarrousel{
+    height: 50%;}
+
+.carrousel .add-to-cart{
+    height: 20px;
+    width: 150px;
+    background: rgba(101, 101, 253, 0.699);
+    border-radius: 10px;
+}
+.carrousel:hover .bottom-card{
+     height: 50%;
 }
 
 .cartecarrousel {
     width: 250px;
-    height: 200px;
-    background-color: var(--main);
+    height: 130px;
+    background-color: var(--accent);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    padding-bottom:0px;
 }
+.imgcarrousel{
+    width: 100%;
+    height: 100%;
+}
+.bottom-card{
+    height: 0px;
+    
+}
+
 
 
 /* =======
@@ -478,6 +533,9 @@ suggestion h1 {
     .total-payment:hover {
         transform: scale(1);
     }
+    .conteneurCarrousel{
+        width: 80%;
+    }
 }
 
 /* === Mobiles === */
@@ -539,6 +597,9 @@ suggestion h1 {
     .total-payment:hover {
         transform: scale(1);
     }
+    .conteneurCarrousel{
+        width: 90%;
+    }
 }
 
 /* === Petits Mobiles === */
@@ -565,5 +626,8 @@ suggestion h1 {
 
     .total-payment:hover {
         transform: scale(1);
+    }
+    .conteneurCarrousel{
+        width: 95%;
     }
 }

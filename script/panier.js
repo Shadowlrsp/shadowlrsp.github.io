@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+
+
+
+
+    // calcule des prix et peuplement du panier
     const soustotalElement = document.querySelector('.sous-total');
     const livraisonElement = document.querySelector('.détails_paiement .livraison');
     const totalElement = document.querySelector('.total');
@@ -178,6 +183,153 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+
+
+
+
+    const handles = [
+        {
+            title: 'Poignée Classique',
+            price: '29,99 €',
+            img: 'assets/boutique/poignees/poignee1.jpg',
+            alt: 'Poignée de porte classique',
+            description: 'Une poignée élégante et intemporelle pour toutes les portes.'
+        },
+        {
+            title: 'Poignée Moderne',
+            price: '34,99 €',
+            img: 'assets/boutique/poignees/poignee2.jpg',
+            alt: 'Poignée de porte moderne',
+            description: 'Design épuré pour un intérieur contemporain.'
+        },
+        {
+            title: 'Poignée Vintage',
+            price: '27,99 €',
+            img: 'assets/boutique/poignees/poignee3.jpg',
+            alt: 'Poignée de porte vintage',
+            description: 'Un charme rétro pour vos portes anciennes.'
+        },
+        {
+            title: 'Poignée Inox',
+            price: '31,99 €',
+            img: 'assets/boutique/poignees/poignee4.jpg',
+            alt: 'Poignée de porte inox',
+            description: 'Robuste et résistante à la corrosion.'
+        },
+        {
+            title: 'Poignée Noire',
+            price: '32,99 €',
+            img: 'assets/boutique/poignees/poignee5.jpg',
+            alt: 'Poignée de porte noire',
+            description: 'Pour une touche moderne et élégante.'
+        },
+        {
+            title: 'Poignée Dorée',
+            price: '39,99 €',
+            img: 'assets/boutique/poignees/poignee6.jpg',
+            alt: 'Poignée de porte dorée',
+            description: 'Finition dorée pour un effet luxueux.'
+        },
+        {
+            title: 'Poignée Carrée',
+            price: '28,99 €',
+            img: 'assets/boutique/poignees/poignee7.jpg',
+            alt: 'Poignée de porte carrée',
+            description: 'Forme géométrique pour un style unique.'
+        },
+        {
+            title: 'Poignée Ronde',
+            price: '26,99 €',
+            img: 'assets/boutique/poignees/poignee8.jpg',
+            alt: 'Poignée de porte ronde',
+            description: 'Simplicité et efficacité au quotidien.'
+        }
+    ];
+
+
+    function ajouterAuPanier(product) {
+        let panier = JSON.parse(localStorage.getItem('monPanier')) || [];
+        const existingProductIndex = panier.findIndex(item => item.id === product.id);
+        if (existingProductIndex > -1) {
+
+            panier[existingProductIndex].quantity += 1;
+        } else {
+
+            panier.push(product);
+        }
+
+        localStorage.setItem('monPanier', JSON.stringify(panier));
+        genererPanierHTML();
+    mettreAJourLeTotal();
+    }
+
+    // carrouselle qui commence au millieu avec la deuxième ligne en décalage
+    const allCarousels = document.querySelectorAll('.carrousel');
+
+    allCarousels.forEach(carousel => {
+
+        carousel.innerHTML = '';
+
+
+        handles.forEach(function (handle, idx) {
+            const card = document.createElement('div');
+            card.className = 'cartecarrousel';
+            card.innerHTML = `
+                
+                    <img src="${handle.img}" alt="${handle.alt}" class="imgcarrousel">
+                
+                <div class="bottom-card">
+                    <h2>${handle.title}</h2>
+                    <p class="price">${handle.price}</p>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+            `;
+
+            const addToCartButton = card.querySelector('.add-to-cart');
+            addToCartButton.addEventListener('click', () => {
+
+                const productToAdd = {
+                    id: handle.title.replace(/\s+/g, '-').toLowerCase(),
+                    title: handle.title,
+                    price: parseFloat(handle.price.replace(',', '.').replace(' €', '')),
+                    img: handle.img,
+                    description: handle.description,
+                    quantity: 1
+                };
+
+                ajouterAuPanier(productToAdd);
+            });
+
+            carousel.appendChild(card);
+        });
+
+        if (window.attachModalListeners) window.attachModalListeners();
+
+        const items = carousel.querySelectorAll('.cartecarrousel');
+
+        if (items.length === 0) {
+            carousel.style.visibility = 'visible';
+            return;
+        }
+
+      
+        carousel.style.visibility = 'visible';
+        const middleIndex = Math.floor(items.length / 2);
+        
+        if (items[middleIndex]) {
+            let scrollPosition = items[middleIndex].offsetLeft; 
+
+            if (carousel.id === 'carrousel_décalé') {
+                scrollPosition += 100; 
+            }else{
+                scrollPosition=scrollPosition
+            }
+            carousel.scrollLeft = scrollPosition;
+            
+        }
+
+        
+    });
     genererPanierHTML();
     mettreAJourLeTotal();
 });
