@@ -60,6 +60,61 @@ main {
 }
 
 /* ========
+   promo
+   ======== */
+.défileconteneur {
+    display: flex;
+    height: 50px;
+    box-shadow: 10px 5px 10px var(--main);
+    width: 100%;
+    background: var(--secondary);
+    padding-bottom:5px;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center;
+}
+
+.raille {
+    margin-top: 10px;
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: max-content;
+}
+
+.défileconteneur:hover .raille {
+    animation-play-state: paused;
+}
+
+.carte_pub {
+    flex: 0 0 auto;
+    width: fit-content;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
+    margin: 50px;
+    text-align: center;
+    
+}
+
+.carte_pub:hover {
+    filter: brightness(1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+.logomarque {
+    height: 50px;
+}
+
+/* ========
    panier
    ======== */
 .produit-panier {
@@ -164,7 +219,6 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
-
     margin-left: auto;
     align-self: center;
 }
@@ -307,9 +361,10 @@ suggestion h1 {
     animation: neon 5s infinite;
     color: white;
 }
+
 /* carrousel */
 
-.conteneurCarrousel{
+.conteneurCarrousel {
     margin-top: 30px;
     width: 60%;
     justify-content: center;
@@ -318,6 +373,7 @@ suggestion h1 {
     background: local;
     overflow: hidden;
 }
+
 .carrousel {
     margin: auto;
     display: grid;
@@ -332,39 +388,44 @@ suggestion h1 {
     background: local;
     margin-top: 5px;
     visibility: hidden;
-    
-    
-    
+
+
+
 
 }
-.carrousel:hover .cartecarrousel{
+
+.carrousel:hover .cartecarrousel {
     height: 200px;
     box-shadow: 10px 5px 10px var(--main);
     transform: scale(1);
     background: var(--secondary);
     padding-bottom: 5px;
 }
-.carrousel:hover .add-to-cart{
+
+.carrousel:hover .add-to-cart {
     height: 40px;
     width: 150px;
     background: rgba(53, 53, 248, 0.404);
     border-radius: 10px;
 }
-.carrousel:hover .imgcarrousel{
-    height: 50%;}
 
-.carrousel .add-to-cart{
+.carrousel:hover .imgcarrousel {
+    height: 50%;
+}
+
+.carrousel .add-to-cart {
     height: 20px;
     width: 150px;
     background: rgba(101, 101, 253, 0.699);
     border-radius: 10px;
 }
-.carrousel:hover .bottom-card{
-     height: 50%;
+
+.carrousel:hover .bottom-card {
+    height: 50%;
 }
 
 .cartecarrousel {
-    width: 250px;
+    width: 200px;
     height: 130px;
     background-color: var(--accent);
     display: flex;
@@ -375,15 +436,17 @@ suggestion h1 {
     border-radius: 10px;
     overflow: hidden;
     flex-direction: column;
-    padding-bottom:0px;
+    padding-bottom: 0px;
 }
-.imgcarrousel{
+
+.imgcarrousel {
     width: 100%;
     height: 100%;
 }
-.bottom-card{
+
+.bottom-card {
     height: 0px;
-    
+
 }
 
 
@@ -533,7 +596,8 @@ suggestion h1 {
     .total-payment:hover {
         transform: scale(1);
     }
-    .conteneurCarrousel{
+
+    .conteneurCarrousel {
         width: 80%;
     }
 }
@@ -597,7 +661,8 @@ suggestion h1 {
     .total-payment:hover {
         transform: scale(1);
     }
-    .conteneurCarrousel{
+
+    .conteneurCarrousel {
         width: 90%;
     }
 }
@@ -627,7 +692,8 @@ suggestion h1 {
     .total-payment:hover {
         transform: scale(1);
     }
-    .conteneurCarrousel{
+
+    .conteneurCarrousel {
         width: 95%;
     }
 }
