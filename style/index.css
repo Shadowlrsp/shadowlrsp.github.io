@@ -105,6 +105,12 @@ body::before {
     background-color: darkred;
 }
 
+.Popup.show{
+    display: flex;
+}
+.Popup.hide{
+    display: none;
+}
 
 /**/
 .mainContent {
@@ -392,6 +398,7 @@ body::before {
 .footer-bottom p {
     font-size: 0.9em;
 }
+
 
 
 
