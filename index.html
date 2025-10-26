@@ -1,142 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style/index.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet" href="style/navbar.css">
-  <title>Bienvenue - PortesDesign</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="../style/navbar.css">
+  <title>Bienvenue - PortesDesign</title>
 </head>
 <body>
-  
-  <div class="door-container" id="doorContainer">
-    <div class="door-inside"></div>
-    
-    <div class="door" id="door">
-      
-        <div class="doorHint"></div>
-        <div class="handle"></div>
-      </div>
-    </div>
-  </div>
-  
-  <main id="mainContent" class="mainContent"> <header>
-      <!--SEARCH BAR (css navbar)-->
-      <section class="Search-bar"> <img src="assets/logo.jpg" alt="" class="Search-bar-logo">
-        
-        <input type="text" id="search" placeholder="Rechercher des produits, catégories, ..." class="Search-input">
 
-        <ul>
-          <li><a href="">Devis</a></li>
-          <li><a href="">Favoris</a></li>
-          <li><a href="">Connexion</a></li>
-        </ul>
+  <div class="door-container" id="doorContainer">
+    <div class="door-inside"></div>
+    
+    <div class="door" id="door">
+      
+      <div class="door-front">
+        <div class="doorHint">Cliquez!</div>
+        <div class="handle"></div>
+      </div>
+    </div>
+  </div>
+  
+  <main id="mainContent" class="mainContent">
+    <header>
+      <section class="Search-bar"> <img src="assets/logo.jpg" alt="" class="Search-bar-logo">
+        
+        <input type="text" id="search" placeholder="Rechercher des produits, catégories, ..." class="Search-input">
 
-      </section>
+        <ul>
+          <li><a href="">Devis</a></li>
+          <li><a href="">Favoris</a></li>
+          <li><a href="">Connexion</a></li>
+        </ul>
 
-      <div class="navbar">
-        <ul>
-          <li> <a href="index.html">Accueil</a> </li>
-          <li> <a href="boutique.html">Boutique</a> </li>
-          <li> <a href="propos.html">A propos</a> </li>
-          <li>
-            <a href="panier.html" class="material-symbols-outlined">shopping_cart</a>
-          </li>
-        </ul>
-      </div>
-      <div class="logo">
-      </div>
-    </header>
-    <!-- reste -->
-    <section class="MainTitle">
-      <h2>Bienvenue sur <span style="color: var(--secondary);">PorteShop</span></h2>
-      <p>Le spécialiste de la porte depuis 1990</p>
-    </section>
+      </section>
 
-    <input type="checkbox" id="popup-toggle" class="popup-toggle" checked>
+      <div class="navbar">
+        <ul>
+          <li> <a href="index.html">Accueil</a> </li>
+          <li> <a href="boutique.html">Boutique</a> </li>
+          <li> <a href="propos.html">A propos</a> </li>
+          <li>
+            <a href="panier.html" class="material-symbols-outlined">shopping_cart</a>
+          </li>
+        </ul>
+      </div>
+      <div class="logo">
+      </div>
+    </header>
+    <section class="MainTitle">
+      <h2>Bienvenue sur <span style="color: var(--secondary);">PorteShop</span></h2>
+      <p>Le spécialiste de la porte depuis 1990</p>
+    </section>
+    
 
-    <div class="Popup" id="Popup">
-      <label for="popup-toggle" id="ClosePopup">X</label>
-      <h2>Marre de se faire détruire sa porte par le psig? Optez pour porteshop!</h2>
-      <img src="assets/index/FB_IMG_1760958602211.jpg" alt="">
-    </div>
-    
-    <section class="Discovers">
-      <h2>Découvrez nos catégories</h2>
-      <div class="category-grid">
-        
-        <a href="boutique.html" class="category-card">
-          <img src="assets/index/17990d159f48e3957cf1fd5e9c73b12891b2b8ec.jpg" alt="Portes d'intérieur">
-          <h3>Portes d'intérieur</h3>
-        </a>
-        
-        <a href="boutique.html" class="category-card">
-          <img src="assets/index/images-swat.jpg" alt="Portes d'extérieur">
-          <h3>Portes d'extérieur</h3>
-        </a>
+    <input type="checkbox" id="popup-toggle" class="popup-toggle" checked>
 
-        <a href="boutique.html" class="category-card">
-          <img src="assets/index/close-up-du-serpent-porte_1048944-16186467.jpg" alt="Accessoires">
-          <h3>Accessoires</h3>
-        </a>
+    <div class="Popup" id="Popup">
+      <label for="popup-toggle" id="ClosePopup">X</label>
+      <h2>Marre de se faire détruire sa porte par le psig? Optez pour porteshop!</h2>
+      <img src="../Assets/FB_IMG_1760958602211.jpg" alt="">
+    </div>
 
-      </div>
-    </section>
+    <section class="Discovers">
+      <h2>Découvrez nos catégories</h2>
+      <div class="category-grid">
+        
+        <a href="boutique.html" class="category-card">
+          <img src="assets/index/17990d159f48e3957cf1fd5e9c73b12891b2b8ec.jpg" alt="Portes d'intérieur">
+          <h3>Portes d'intérieur</h3>
+        </a>
+        
+        <a href="boutique.html" class="category-card">
+          <img src="assets/index/images-swat.jpg" alt="Portes d'extérieur">
+          <h3>Portes d'extérieur</h3>
+        </a>
 
-    <section class="engagements">
-      <h2>Nos engagements</h2>
-      <div class="engagement-grid">
-        <div class="engagement-item">
-          <span class="material-symbols-outlined">construction</span>
-          <h3>Qualité Supérieure</h3>
-          <p>Des matériaux robustes et une finition irréprochable pour une durabilité garantie.</p>
-        </div>
-        <div class="engagement-item">
-          <span class="material-symbols-outlined">design_services</span>
-          <h3>Design & Sur-mesure</h3>
-          <p>Un large choix de styles et la possibilité de créer la porte qui vous ressemble.</p>
-        </div>
-        <div class="engagement-item">
-          <span class="material-symbols-outlined">support_agent</span>
-          <h3>Service Expert</h3>
-          <p>Notre équipe vous accompagne de la conception à la pose de votre projet.</p>
-        </div>
-      </div>
-    </section>
+        <a href="boutique.html" class="category-card">
+          <img src="assets/index/close-up-du-serpent-porte_1048944-16186467.jpg" alt="Accessoires">
+          <h3>Accessoires</h3>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="informations">
+      <h1>Blabla</h1>
+    </section>
+
+    <section class="engagements">
+      <h2>Nos engagements</h2>
+      <div class="engagement-grid">
+        <div class="engagement-item">
+          <span class="material-symbols-outlined">construction</span>
+          <h3>Qualité Supérieure</h3>
+          <p>Des matériaux robustes et une finition irréprochable pour une durabilité garantie.</p>
+        </div>
+        <div class="engagement-item">
+          <span class="material-symbols-outlined">design_services</span>
+          <h3>Design & Sur-mesure</h3>
+          <p>Un large choix de styles et la possibilité de créer la porte qui vous ressemble.</p>
+        </div>
+        <div class="engagement-item">
+          <span class="material-symbols-outlined">support_agent</span>
+          <h3>Service Expert</h3>
+          <p>Notre équipe vous accompagne de la conception à la pose de votre projet.</p>
+        </div>
+      </div>
+    </section>
 
 
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h4>PorteShop</h4>
-          <p>Le spécialiste de la porte depuis 1990. Qualité et design à votre service.</p>
-        </div>
-        <div class="footer-column">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="boutique.html">Boutique</a></li>
-            <li><a href="propos.html">A propos</a></li>
-            <li><a href="">Devis</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Contact</h4>
-          <ul>
-            <li>Email: contact@porteshop.com</li>
-            <li>Téléphone: 01 23 45 67 89</li>
-            <li>Adresse: 123 Rue du Design, 75000 Paris</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 PorteShop - Tous droits réservés.</p>
-      </div>
-    </footer>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4>PorteShop</h4>
+          <p>Le spécialiste de la porte depuis 1990. Qualité et design à votre service.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="propos.html">A propos</a></li>
+            <li><a href="">Devis</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: contact@porteshop.com</li>
+            <li>Téléphone: 01 23 45 67 89</li>
+            <li>Adresse: 123 Rue du Design, 75000 Paris</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PorteShop - Tous droits réservés.</p>
+      </div>
+    </footer>
 
-  </main>
-    <script src="../script/index.js"></script>
+  </main>
+    <script src="../script/index.js"></script>
 </body>
 </html>
