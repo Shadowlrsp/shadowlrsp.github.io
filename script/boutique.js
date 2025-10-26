@@ -121,6 +121,48 @@ const doorframes = [
     }
 ];
 
+const doorkeys = [
+    {
+        category: 'clefs',
+        title: 'Clé Standard',
+        price: '9,99 €',
+        img: 'assets/boutique/clefs/key_1.jpg',
+        alt: 'Clé standard',
+        description: 'Une clé fiable pour une utilisation quotidienne.'
+    },
+    {
+        category: 'clefs',
+        title: 'Clé Sécurisée',
+        price: '14,99 €',
+        img: 'assets/boutique/clefs/key_2.jpg',
+        alt: 'Clé sécurisée',
+        description: 'Conçue pour offrir une sécurité renforcée.'
+    },
+    {
+        category: 'clefs',
+        title: 'Clé Design',
+        price: '12,99 €',
+        img: 'assets/boutique/clefs/key_3.jpg',
+        alt: 'Clé design',
+        description: 'Allie fonctionnalité et esthétique.'
+    },
+    {
+        category: 'clefs',
+        title: 'Clé Sécurisée',
+        price: '14,99 €',
+        img: 'assets/boutique/clefs/key_4.jpg',
+        alt: 'Clé sécurisée',
+        description: 'Conçue pour offrir une sécurité renforcée.'
+    },
+    {
+        category: 'clefs',
+        title: 'Clé Renforcée',
+        price: '24,99 €',
+        img: 'assets/boutique/clefs/key_2.jpg',
+        alt: 'Clé renforcée',
+        description: 'Conçue pour offrir une sécurité plus renforcée.'
+    },
+];
 var cart = [];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -151,6 +193,20 @@ document.addEventListener('DOMContentLoaded', function() {
             card.innerHTML = genererHtml(frame.img, frame.alt, frame.title, frame.price, idx);
             attachAddToCart(card, frame);
             framesContainer.appendChild(card);
+        });
+    }
+
+    // Génération des clefs
+    const keysContainer = document.querySelector('.door-keys');
+    if (keysContainer) {
+        keysContainer.innerHTML = '';
+        doorkeys.forEach(function(key, idx) {
+            const card = document.createElement('div');
+            card.className = `product-card category-${key.category}`;
+            card.dataset.category = key.category;
+            card.innerHTML = genererHtml(key.img, key.alt, key.title, key.price, idx);
+            attachAddToCart(card, key);
+            keysContainer.appendChild(card);
         });
     }
 
