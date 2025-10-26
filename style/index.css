@@ -129,7 +129,6 @@ body::before {
 #mainContent.visible {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
 }
 
 .MainTitle {
@@ -400,4 +399,5 @@ body::before {
 .footer-bottom p {
     font-size: 0.9em;
 }
+
 
