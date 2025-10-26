@@ -32,8 +32,6 @@ body {
     background: linear-gradient(290deg, var(--background), #81c3d78c, #3a7ca5e0);
     background-size: 400% 400%;
     animation: linearGradient 15s ease infinite;
-    display: flex;
-    flex-direction: column;
     min-height: 120vh;
 }
 
@@ -52,12 +50,36 @@ main {
 .titre_principal {
     text-align: center;
     color: white;
-    margin-bottom: 2%;
+    margin-bottom: 2.5em;
     font-size: 3em;
     animation: neon 5s infinite;
     width: 100%;
     margin-top: 20px;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
 }
+
+.titre_principal::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    transform: scaleY(-1);
+    transform-origin: bottom;
+    animation: neon 5s infinite;
+
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.5),
+            transparent 90%);
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.5),
+            transparent 90%);
+}
+
 
 /* ========
    promo
@@ -68,7 +90,7 @@ main {
     box-shadow: 10px 5px 10px var(--main);
     width: 100%;
     background: var(--secondary);
-    padding-bottom:5px;
+    padding-bottom: 5px;
     flex-direction: row;
     overflow: hidden;
     align-items: center;
@@ -92,11 +114,11 @@ main {
     transition: filter 0.3s ease;
     margin: 50px;
     text-align: center;
-    
+
 }
 
 .carte_pub:hover {
-    filter: brightness(1);
+    filter: brightness(1.1);
 }
 
 @keyframes scroll {
@@ -358,8 +380,35 @@ suggestion {
 
 suggestion h1 {
     margin: auto;
-    animation: neon 5s infinite;
     color: white;
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em;
+    animation: neon2 5s infinite;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    overflow: visible;
+}
+
+suggestion h1::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    transform: scaleY(-1);
+    transform-origin: bottom;
+    animation: neon2 5s infinite;
+
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.671),
+            transparent 80%);
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.671),
+            transparent 80%);
 }
 
 /* carrousel */
@@ -449,9 +498,9 @@ suggestion h1 {
 
 }
 
-#commentaire{
+#commentaire {
     margin-top: 20px;
-    
+
 }
 
 /* =======
@@ -551,12 +600,188 @@ suggestion h1 {
     59%,
     61%,
     100% {
-        text-shadow: 0 0 5px var(--neoncolor), 0 0 10px var(--neoncolor), 0 0 20px var(--neoncolor), 0 0 40px var(--neoncolor), 0 0 80px var(--neoncolor);
+        text-shadow: 0 0 5px var(--neoncolor), 0 0 10px var(--neoncolor), 0 0 15px var(--neoncolor), 0 0 20px var(--neoncolor), 0 0 25px var(--neoncolor);
     }
 
     40%,
     60% {
         text-shadow: none;
+    }
+}
+
+@keyframes neon2 {
+
+    0%,
+    39%,
+    41%,
+    59%,
+    61%,
+    100% {
+        text-shadow: 0 0 2px var(--neoncolor), 0 0 4px var(--neoncolor), 0 0 7px var(--neoncolor), 0 0 10px var(--neoncolor), 0 0 15px var(--neoncolor);
+    }
+
+    40%,
+    60% {
+        text-shadow: none;
+    }
+}
+
+/* =============================
+   BOUTON MODE SOMBRE
+   ============================= */
+.theme-toggle {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background: var(--accent);
+    color: var(--background);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 0 25px rgba(129, 195, 215, 0.4);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s ease-in-out;
+}
+
+.theme-toggle:hover {
+    background: var(--main);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 45px rgba(129, 195, 215, 0.6);
+}
+
+body.dark-mode .theme-toggle {
+    content: '☀️';
+}
+
+/* === MODE SOMBRE GLOBAL === */
+body.dark-mode {
+    background: #121212;
+    color: #eee;
+    animation: none;
+}
+
+body.dark-mode .produit-panier,
+body.dark-mode .total-payment {
+    background: #1E1E1E;
+    border-color: var(--accent);
+    color: var(--background);
+}
+
+
+body.dark-mode .total-payment h2,
+body.dark-mode .total-payment .total,
+body.dark-mode .produitinfo h2,
+body.dark-mode .produit p {
+    color: #f1f1f1;
+}
+
+body.dark-mode #panier-vide-message {
+    color: var(--background);
+}
+
+body.dark-mode .link {
+    color: var(--neoncolor);
+}
+
+body.dark-mode select {
+    background-color: #333;
+    color: var(--background);
+    border-color: var(--accent);
+}
+
+body.dark-mode .site-footer {
+    background-color: #0d2a3a;
+    color: #ccc;
+}
+
+
+body.dark-mode .défileconteneur {
+    background-color: #2779a5;
+    color: #ccc;
+}
+
+body.dark-mode .paybtn {
+    margin-top: 10%;
+    padding: 10px;
+    background-color: #4caf4fa6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    font-size: 20px;
+    box-shadow: 0px 15px #4f9b535b;
+    margin-bottom: 30px
+}
+
+body.dark-mode .paybtn:active {
+    box-shadow: 0px 5px #4f9b5333;
+    transform: translateY(10px);
+    cursor: pointer;
+}
+
+/* ===================================
+   Bouton : Retour en haut de la page
+   ================================= */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--main), var(--accent));
+    color: var(--background);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;/* affiché dynamiquement par JS */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.35s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(129, 195, 215, 0.5);
+}
+
+.back-to-top:active {
+    transform: scale(0.96);
+    box-shadow: 0 5px 15px rgba(129, 195, 215, 0.3);
+}
+
+.back-to-top span.material-symbols-outlined {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover span.material-symbols-outlined {
+    transform: translateY(-2px);
+}
+
+.back-to-top.show {
+    display: flex;
+    animation: fadeInBtn 0.6s ease forwards;
+}
+
+@keyframes fadeInBtn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -567,7 +792,6 @@ suggestion h1 {
 /* === Tablettes et petits ordinateurs portables === */
 @media (max-width: 1024px) {
     main {
-
         flex-direction: column;
         align-items: center;
         margin-top: 0;
@@ -575,6 +799,19 @@ suggestion h1 {
 
     .titre_principal {
         margin-top: 20px;
+        margin-bottom: 2.2em;
+        font-size: 30px;
+    }
+
+    .titre_principal::after,
+    suggestion h1::after {
+        display: none;
+    }
+
+
+    suggestion h1,
+    #commentaire {
+        margin-bottom: 1.5em;
     }
 
     .produit-panier {
@@ -673,7 +910,8 @@ suggestion h1 {
 /* === Petits Mobiles === */
 @media (max-width: 480px) {
     .titre_principal {
-        font-size: 1.8em;
+        font-size: 2.2em;
+        margin-bottom: 1em;
     }
 
     .produit-panier {
@@ -698,5 +936,24 @@ suggestion h1 {
 
     .conteneurCarrousel {
         width: 95%;
+    }
+
+    .theme-toggle {
+        bottom: 85px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .back-to-top span.material-symbols-outlined {
+        font-size: 1.5rem;
     }
 }

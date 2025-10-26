@@ -1,8 +1,7 @@
-var cart = [];
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    
+
     const soustotalElement = document.querySelector('.sous-total');
     const livraisonElement = document.querySelector('.détails_paiement .livraison');
     const totalElement = document.querySelector('.total');
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chronopost: 12.00
     };
 
-
+    //génération du panier
     function genererPanierHTML() {
 
         let panier = JSON.parse(localStorage.getItem('monPanier')) || [];
@@ -258,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('monPanier', JSON.stringify(panier));
         genererPanierHTML();
-    mettreAJourLeTotal();
+        mettreAJourLeTotal();
     }
 
     // carrouselle qui commence au millieu avec la deuxième ligne en décalage
@@ -310,38 +309,63 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-      
+
         carousel.style.visibility = 'visible';
         const middleIndex = Math.floor(items.length / 2);
-        
+
         if (items[middleIndex]) {
-            let scrollPosition = items[middleIndex].offsetLeft; 
+            let scrollPosition = items[middleIndex].offsetLeft;
 
             if (carousel.id === 'carrousel_décalé') {
-                scrollPosition += 100; 
-            }else{
-                scrollPosition=scrollPosition
+                scrollPosition += 100;
+            } else {
+                scrollPosition = scrollPosition
             }
             carousel.scrollLeft = scrollPosition;
-            
+
         }
 
-        
+
+    });
+
+    /* === 3. BOUTON "RETOURNER EN HAUT DE LA PAGE" === */
+    const topBtn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 350) {
+            topBtn.classList.add("show");
+        } else {
+            topBtn.classList.remove("show");
+        }
+    });
+
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    /* === MODE SOMBRE / CLAIR === */
+    const themeToggle = document.getElementById("themeToggle");
+
+    //Vérifie si un thème est déjà sauvegardé
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.textContent = "☀️";
+    } else {
+        themeToggle.textContent = "🌙";
+    }
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Sauvegarde le choix
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            themeToggle.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            themeToggle.textContent = "🌙";
+        }
     });
     genererPanierHTML();
     mettreAJourLeTotal();
-
 });
 
-function loadCart() {
-    const savedCart = localStorage.getItem('cart');
-    if (!savedCart) return;
-    
-    try {
-        cart = JSON.parse(savedCart);
-        console.log('Cart loaded:', cart);
-    } catch (e) {
-        console.error('Error loading cart:', e);
-        cart = [];
-    }
-}
